@@ -1,26 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&family=Syne+Mono&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&family=Syne+Mono&family=Tilt+Warp&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&family=Syne+Mono&family=Tilt+Warp&family=Titan+One&family=Trykker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Suez+One&family=Syne+Mono&family=Tilt+Warp&family=Titan+One&family=Trykker&family=Ubuntu+Condensed&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@font-face{
+  font-family: "Superclarendon";
+  src: url("/fonts/Superclarendon.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+ }
+ .font-suez   { font-family: "Suez One", serif; }
+.font-source { font-family: "Source Serif Pro", serif; }
+.font-averia { font-family: "Averia Serif Libre", serif; }
+.font-syne   { font-family: "Syne Mono", monospace; }
+.font-ubuntu { font-family: "Ubuntu Condensed", sans-serif; }
+.font-titan  { font-family: "Titan One", serif; }
+.font-trykker{ font-family: "Trykker", sans-serif; }
+.font-superc { font-family: "Superclarendon", serif; }
+.font-tilt   { font-family: "Tilt Warp", serif; }
