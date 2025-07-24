@@ -25,7 +25,7 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.8.3)
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.1.11
         version: 4.1.11
       '@types/next':
         specifier: ^8.0.7
@@ -48,8 +48,11 @@ importers:
       eslint-config-next:
         specifier: 15.4.3
         version: 15.4.3(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.1.11
         version: 4.1.11
       typescript:
         specifier: ^5
