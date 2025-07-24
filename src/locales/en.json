@@ -1,0 +1,21 @@
+{
+  "hero": {
+    "title": "Everything for work, all in one place.",
+    "description": "Replace scattered tools with one intelligent workspace. BEBA, your AI agent, saves hours daily by handling the busy work.",
+    "cta": "Start in minutes. Save millions.",
+    "trusted": "Trusted by the world's top teams",
+    "trustedDescription": "From Fortune 500s to fast-growing startups, Bearish OS is the backbone of modern teams looking for seamless, intelligent productivity."
+  },
+  "nav": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up",
+    "demo": "Demo",
+    "resources": "Resources",
+    "cta": "Start saving now"
+  }
+}

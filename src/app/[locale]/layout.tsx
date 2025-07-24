@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-import "./globals.css";
-// ✅ Import Google Fonts
+import { notFound } from 'next/navigation';
 import {
   Suez_One,
   Source_Serif_4,
@@ -12,7 +10,7 @@ import {
   Tilt_Warp,
 } from "next/font/google";
 
-// ✅ Load fonts as CSS variables
+// Load fonts as CSS variables
 const suez = Suez_One({
   subsets: ["latin"],
   variable: "--font-suez",
@@ -54,20 +52,34 @@ const tilt = Tilt_Warp({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  title: "Bearish",
-  description: "Workspace app powered by AI",
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
-};
+const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
-  return children;
+  // Await params before using its properties
+  const { locale } = await params;
+  
+  // Validate that the incoming `locale` parameter is valid
+  if (!locales.includes(locale)) {
+    notFound();
+  }
+
+  return (
+    <html lang={locale}>
+      <body
+        className={`${suez.variable} ${source.variable} ${averia.variable} ${syne.variable} ${ubuntu.variable} ${titan.variable} ${trykker.variable} ${tilt.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
 }

@@ -1,37 +1,65 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import ArrowSquareUp from "@/icons/arrows/ArrowSquareUp.svg";
-import TickCircle from "@/icons/arrows/tick-circle.svg";
+import Image from "next/image";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useLocale } from "@/lib/hooks/useLocale";
 
-// SVGR‑imported flags
-import EnFlag from "@/icons/flags/ES.svg";
-import JaFlag from "@/icons/flags/JP.svg";
-import ArFlag from "@/icons/flags/JO.svg";
-import EsFlag from "@/icons/flags/ES.svg";
-import ItFlag from "@/icons/flags/IT.svg";
-import FrFlag from "@/icons/flags/FR.svg";
-import KoFlag from "@/icons/flags/KR.svg";
+// Regular image imports
+const EnFlag = "/icons/flags/US.svg";
+const JaFlag = "/icons/flags/JP.svg";
+const ArFlag = "/icons/flags/JO.svg"; // Jordan for Arabic
+const EsFlag = "/icons/flags/ES.svg"; // Spain for Spanish
+const ItFlag = "/icons/flags/IT.svg"; // Italy for Italian
+const FrFlag = "/icons/flags/FR.svg"; // France for French
+const KoFlag = "/icons/flags/KR.svg"; // South Korea for Korean
+const ArrowSquareUp = "/icons/arrows/ArrowSquareUp.svg";
+const TickCircle = "/icons/arrows/tick-circle.svg";
+
+// Flag mapping function
+const getFlagForLanguage = (langCode: string) => {
+  switch (langCode) {
+    case "en": return EnFlag;
+    case "ja": return JaFlag;
+    case "ar": return ArFlag;
+    case "es": return EsFlag;
+    case "it": return ItFlag;
+    case "fr": return FrFlag;
+    case "ko": return KoFlag;
+    default: return EnFlag;
+  }
+};
 
 interface Lang {
   code: string;
   label: string;
-  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 const LANGUAGES: Lang[] = [
-  { code: "en", label: "English", Icon: EnFlag },
-  { code: "ja", label: "Japanese", Icon: JaFlag },
-  { code: "ar", label: "Arabic", Icon: ArFlag },
-  { code: "es", label: "Spanish", Icon: EsFlag },
-  { code: "it", label: "Italian", Icon: ItFlag },
-  { code: "fr", label: "French", Icon: FrFlag },
-  { code: "ko", label: "Korean", Icon: KoFlag },
+  { code: "en", label: "English" },
+  { code: "ja", label: "Japanese" },
+  { code: "ar", label: "Arabic" },
+  { code: "es", label: "Spanish" },
+  { code: "it", label: "Italian" },
+  { code: "fr", label: "French" },
+  { code: "ko", label: "Korean" },
 ];
 
 export default function LanguageDropdown() {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<Lang>(LANGUAGES[0]);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentLocale = useLocale();
+  const [selected, setSelected] = useState<Lang>(
+    LANGUAGES.find(lang => lang.code === currentLocale) || LANGUAGES[0]
+  );
+
+  // Update selected state when currentLocale changes
+  useEffect(() => {
+    const newSelected = LANGUAGES.find(lang => lang.code === currentLocale) || LANGUAGES[0];
+    setSelected(newSelected);
+  }, [currentLocale]);
   const ref = useRef<HTMLDivElement>(null);
 
   // Close on outside click
@@ -52,9 +80,19 @@ export default function LanguageDropdown() {
         onClick={() => setOpen((o) => !o)}
         className="flex items-center gap-1 text-[#F4F1EB] text-[20px] font-suez"
       >
-        <selected.Icon className="w-[15px]  h-[15px] " />
+        <Image 
+          src={getFlagForLanguage(selected.code)}
+          alt={selected.label}
+          width={15}
+          height={15}
+          className="w-[15px] h-[15px]"
+        />
         <span className="">{selected.label.slice(0, 2).toUpperCase()}</span>
-        <ArrowSquareUp
+        <Image
+          src={ArrowSquareUp}
+          alt="Dropdown arrow"
+          width={16}
+          height={16}
           className={`w-4 h-4 cursor-pointer fill-current transform transition-transform ${
             open ? "rotate-180" : ""
           }`}
@@ -70,6 +108,18 @@ export default function LanguageDropdown() {
               onClick={() => {
                 setSelected(lang);
                 setOpen(false);
+                // Remove any existing locale prefix and get the clean path
+                let path = pathname;
+                const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
+                for (const locale of locales) {
+                  if (path.startsWith(`/${locale}`)) {
+                    path = path.substring(locale.length + 1) || '/';
+                    break;
+                  }
+                }
+                // If path is just '/', don't add it to avoid double slash
+                const newPath = path === '/' ? `/${lang.code}` : `/${lang.code}${path}`;
+                router.push(newPath);
               }}
               className="flex items-center  text-[#3C3C3C] h-[44px] px-3 cursor-pointer hover:bg-[#F4F1EB] "
               style={{
@@ -79,10 +129,22 @@ export default function LanguageDropdown() {
                 fontWeight: "400px",
               }}
             >
-              <lang.Icon className="w-[20px] h-[20px] mr-2" />
+              <Image 
+                src={getFlagForLanguage(lang.code)}
+                alt={lang.label}
+                width={20}
+                height={20}
+                className="w-[20px] h-[20px] mr-2"
+              />
               <span className="flex-1">{lang.label}</span>
               {selected.code === lang.code && (
-                <TickCircle className="w-[20px] h-[20px] fill-current text-[#ffffff90]" />
+                <Image
+                  src={TickCircle}
+                  alt="Selected"
+                  width={15}
+                  height={15}
+                  className="w-[15px] h-[15px]"
+                />
               )}
             </div>
           ))}
