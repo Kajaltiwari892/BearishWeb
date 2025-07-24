@@ -1,5 +1,6 @@
+
 import type { NextConfig } from "next";
-import type { Configuration } from "webpack";
+ import type { Configuration } from "webpack";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -14,7 +15,7 @@ const nextConfig: NextConfig = {
         {
           loader: "@svgr/webpack",
           options: {
-            icon: true, // optional
+            icon: true,
           },
         },
       ],

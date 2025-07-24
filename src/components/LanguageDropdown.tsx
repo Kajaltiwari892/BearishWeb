@@ -72,7 +72,12 @@ export default function LanguageDropdown() {
                 setOpen(false);
               }}
               className="flex items-center  text-[#3C3C3C] h-[44px] px-3 cursor-pointer hover:bg-[#F4F1EB] "
-              style={{ fontStyle: "normal", fontFamily: "Inria Serif" ,fontSize:"16px" , fontWeight:"400px"}}
+              style={{
+                fontStyle: "normal",
+                fontFamily: "Inria Serif",
+                fontSize: "16px",
+                fontWeight: "400px",
+              }}
             >
               <lang.Icon className="w-[20px] h-[20px] mr-2" />
               <span className="flex-1">{lang.label}</span>
