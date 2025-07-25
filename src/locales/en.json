@@ -17,5 +17,22 @@
     "demo": "Demo",
     "resources": "Resources",
     "cta": "Start saving now"
+  },
+  "intelligentConnections": {
+    "sectionTitle": "Intelligent Connections That Transform Work",
+    "cards": [
+      {
+        "title": "Work Scattered Everywhere",
+        "description": "Teams waste 2.5 hours daily switching tools."
+      },
+      {
+        "title": "Flow State Productivity",
+        "description": "2.5x faster completion. Zero context switching."
+      },
+      {
+        "title": "Elegantly Crafted to Perfection",
+        "description": "Built cleanly, incredibly simple yet powerful"
+      }
+    ]
   }
 }

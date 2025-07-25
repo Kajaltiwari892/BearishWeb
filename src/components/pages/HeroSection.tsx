@@ -51,7 +51,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   ];
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ height: '100vh' }}>
+    <div className="relative w-full overflow-hidden" style={{ height: '103vh' }}>
       {/* Hero background image - Fixed positioning */}
       <div className="inset-0 z-0">
         <Image

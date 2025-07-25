@@ -17,5 +17,26 @@
     "demo": "Démo",
     "resources": "Ressources",
     "cta": "Commencez à économiser maintenant"
+  },
+  
+  "intelligentConnections": {
+    "sectionTitle": "Connexions intelligentes qui transforment le travail",
+    "cards": [
+      {
+        "title": "Travail dispersé partout",
+        "description": "Les équipes perdent 2,5 heures par jour à changer d’outil."
+      },
+      {
+        "title": "Productivité en état de flux",
+        "description": "Achèvement 2,5× plus rapide. Zéro changement de contexte."
+      },
+      {
+        "title": "Conçu élégamment à la perfection",
+        "description": "Construit proprement, incroyablement simple mais puissant"
+      }
+    ],
+    "additionalContent": "Du contenu supplémentaire sera ajouté ici"
   }
+
+
 }

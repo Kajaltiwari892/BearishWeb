@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useLocale } from './hooks/useLocale';
 
+interface CardItem{
+  title: string;
+  description: string;
+}
+
+interface IntelligentConnections {
+  sectionTitle: string;
+  cards: CardItem[];
+  additionalContent: string;
+}
 interface Translation {
   hero: {
     title: string;
@@ -21,6 +31,7 @@ interface Translation {
     cta: string;
     resources: string;
   };
+  intelligentConnections: IntelligentConnections;
 }
 
 export function useTranslations() {

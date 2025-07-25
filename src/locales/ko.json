@@ -17,5 +17,24 @@
     "demo": "데모",
     "resources": "리소스",
     "cta": "지금 절약 시작하기"
+  },
+
+  "intelligentConnections": {
+    "sectionTitle": "업무를 혁신하는 지능형 연결",
+    "cards": [
+      {
+        "title": "여기저기 흩어진 작업",
+        "description": "팀은 도구 전환에 하루 평균 2.5시간을 낭비합니다."
+      },
+      {
+        "title": "몰입 상태의 생산성",
+        "description": "2.5배 더 빠른 완료. 맥락 전환 없음."
+      },
+      {
+        "title": "완벽함을 위한 우아한 설계",
+        "description": "깔끔하고 단순하면서도 강력하게 구축되었습니다."
+      }
+    ],
+    "additionalContent": "여기에 추가 콘텐츠가 표시됩니다"
   }
 }
