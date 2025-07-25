@@ -53,7 +53,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <div className="relative w-full overflow-hidden" style={{ height: '100vh' }}>
       {/* Hero background image - Fixed positioning */}
-      <div className="fixed inset-0 z-0">
+      <div className="inset-0 z-0">
         <Image
           src={HeroBannerImg}
           alt="Hero Banner"

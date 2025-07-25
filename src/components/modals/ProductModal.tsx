@@ -25,7 +25,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           : viewportWidth < 1024
           ? 500
           : 600;
-      const modalHeight = viewportWidth < 640 ? 260 : 340;
+      const modalHeight = viewportWidth < 640 ? 280 : 380; // Increased height to fit all content
 
       let left = rect.left;
       let top = rect.bottom + 8;
@@ -59,7 +59,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
       window.innerWidth < 640
         ? Math.min(window.innerWidth - 32, 350)
         : 600;
-    const defaultHeight = window.innerWidth < 640 ? 260 : 360; 
+    const defaultHeight = window.innerWidth < 640 ? 280 : 380; // Increased height to fit all content
 
     return {
       top: 80,
@@ -73,7 +73,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
 
   return (
     <div
-      className="fixed z-[10000] rounded-sm bg-white shadow-lg border border-gray-200"
+      className="fixed z-[10000] rounded-sm bg-[#FDFDFC] shadow-lg border border-[#B3A89A]"
       style={{
         top: `${position.top}px`,
         left: `${position.left}px`,
@@ -86,7 +86,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
         {/* Left Side - Products */}
         <div className="flex-1 sm:pr-4 mb-4 sm:mb-0">
           {/* First Product Section */}
-          <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-6">
+          <div className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
+            {" "}
+            {/* Reduced margin */}
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/WorkOS.svg"
@@ -98,14 +100,18 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
                 Work OS
               </h3>
             </div>
-            <p className="text-gray-600 text-xs sm:text-base">
+            <p className="text-gray-600 text-[10px] sm:text-sm">
+              {" "}
+              {/* Smaller text */}
               Enterprise power, startup simplicity. The intelligent workspace
               that grows and protects your business.
             </p>
           </div>
 
           {/* Second Product Section */}
-          <div className="space-y-1 sm:space-y-2">
+          <div className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
+            {" "}
+            {/* Reduced margin */}
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/BebaAIIcon.svg"
@@ -117,9 +123,32 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
                 BEBA Agent
               </h3>
             </div>
-            <p className="text-gray-600 text-xs sm:text-base">
-              Smart Automation, effortless control. The AI Agent that
+            <p className="text-gray-600 text-[10px] sm:text-sm">
+              {" "}
+              {/* Smaller text */}
+              Smart automation, effortless control. The AI agent that
               anticipates needs and eliminates routine work.
+            </p>
+          </div>
+
+          {/* Third Product Section - Privacy & Security */}
+          <div className="space-y-1 sm:space-y-1.5">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/securityPrivacy.svg"
+                alt="Privacy & Security Icon"
+                width={26}
+                height={26}
+              />
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 ml-2">
+                Privacy & Security
+              </h3>
+            </div>
+            <p className="text-gray-600 text-[10px] sm:text-sm">
+              {" "}
+              {/* Smaller text */}
+              Not added later—woven into every layer. Bearish scales your
+              security and compliance as you grow.
             </p>
           </div>
         </div>
@@ -133,20 +162,114 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           <h3 className="text-base sm:text-lg font-semibold text-gray-800 font-suez mb-2 sm:mb-4">
             Features
           </h3>
-          <div className="flex items-center">
-            <Image
-              src="/icons/arrows/WorkOS.svg"
-              alt="Work OS Icon"
-              width={26}
-              height={26}
-            />
-            <h3 className="text-lg sm:text-base font-semibold text-gray-800 ml-2">
-              Work OS
-            </h3>
+
+          {/* Intelligent Connections */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/intelligentConnections.svg"
+                alt="Intelligent Connections Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Intelligent Connections
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              All the apps you love working together
+            </p>
           </div>
-          <p className="text-gray-600 ml-6 text-xs sm:text-base">
-            Work OS
-          </p>
+
+          {/* Connected Communications */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/ConnectedCommunications.svg"
+                alt="Connected Communications Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Connected Communications
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              Email, messaging, & video in harmony
+            </p>
+          </div>
+
+          {/* Smart Project & Scheduling */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/smartProjects.svg"
+                alt="Smart Project & Scheduling Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Smart Project & Scheduling
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              Tasks, deadlines, and calendar unified
+            </p>
+          </div>
+
+          {/* Unified Document Hub */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/unifiedDocumentHub.svg"
+                alt="Unified Document Hub Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Unified Document Hub
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              Files that flow where you need them
+            </p>
+          </div>
+
+          {/* Relationship Intelligence */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/RelationshipIntelligence.svg"
+                alt="Relationship Intelligence Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Relationship Intelligence
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              CRM that connects your workflow
+            </p>
+          </div>
+
+          {/* Business Analytics */}
+          <div className="mb-2">
+            <div className="flex items-center">
+              <Image
+                src="/icons/arrows/BusinessAnalytics.svg"
+                alt="Business Analytics Icon"
+                width={20}
+                height={20}
+              />
+              <h4 className="text-sm sm:text-base font-semibold text-gray-800 ml-2">
+                Business Analytics
+              </h4>
+            </div>
+            <p className="text-gray-600 ml-7 text-xs sm:text-sm">
+              Insights across all aspects of your work
+            </p>
+          </div>
         </div>
       </div>
     </div>

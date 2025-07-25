@@ -3,6 +3,7 @@ import {
   Suez_One,
   Source_Serif_4,
   Averia_Serif_Libre,
+  Averia_Sans_Libre,
   Syne,
   Ubuntu_Condensed,
   Titan_One,
@@ -26,6 +27,11 @@ const averia = Averia_Serif_Libre({
   variable: "--font-averia",
   weight: "400",
 });
+const averiaSans = Averia_Sans_Libre({
+  subsets: ["latin"],
+  variable: "--font-averiaSans",
+  weight: "400",
+});  ;
 const syne = Syne({
   subsets: ["latin"],
   variable: "--font-syne",
@@ -76,7 +82,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${suez.variable} ${source.variable} ${averia.variable} ${syne.variable} ${ubuntu.variable} ${titan.variable} ${trykker.variable} ${tilt.variable} antialiased`}
+        className={`${suez.variable} ${source.variable} ${averia.variable} ${syne.variable} ${ubuntu.variable} ${titan.variable} ${trykker.variable} ${tilt.variable} ${averiaSans.variable} antialiased`}
       >
         {children}
       </body>
