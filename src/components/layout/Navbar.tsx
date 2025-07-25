@@ -179,7 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed top-[80px] left-0 right-0 bg-black/95 backdrop-blur-sm z-[9997] border-t border-[#B3A89A]/30">
+        <div className="lg:hidden fixed top-[80px] left-0 right-0  backdrop-blur-sm z-[9997] border-t border-[#B3A89A]/30">
           <div className="px-4 py-6 space-y-4">
             {/* Mobile Nav Items */}
             <div className="space-y-4 text-[#F4F1EB] font-suez">
