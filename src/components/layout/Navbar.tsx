@@ -46,11 +46,14 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
           {/* Left Side */}
           <div className="flex items-center">
             {/* Logo */}
-            <Link href="/" className="flex items-center mr-4 sm:mr-6 lg:mr-[24px]">
-              <Image 
-                src="/icons/arrows/BearishLogo.png" 
-                alt="Bearish Logo" 
-                width={43} 
+            <Link
+              href="/"
+              className="flex items-center mr-4 sm:mr-6 lg:mr-[24px]"
+            >
+              <Image
+                src="/icons/arrows/BearishLogo.png"
+                alt="Bearish Logo"
+                width={43}
                 height={43}
                 className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[43px] lg:h-[43px]"
               />
@@ -67,13 +70,14 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                 className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
                 onMouseEnter={handleProductHover}
                 onMouseLeave={handleProductLeave}
+                style={{ fontFamily: "Suez one" }}
               >
                 <span>{translations.nav.product}</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 ml-1 transform transition-transform ${
                     isProductModalOpen ? "rotate-180" : ""
                   }`}
@@ -84,13 +88,14 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               <div
                 className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
                 onClick={() => toggleDropdown("Solutions")}
+                style={{ fontFamily: "Suez one" }}
               >
                 <span>{translations.nav.solutions}</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 ml-1 transform transition-transform ${
                     openDropdown === "Solutions" ? "rotate-180" : ""
                   }`}
@@ -101,21 +106,23 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               <Link
                 href="/pricing"
                 className="text-[var(--bearish-colors-warm-off-white-light)] text-lg xl:text-[20px] font-suez leading-normal whitespace-nowrap"
+                style={{ fontFamily: "Suez one" }}
               >
-              {translations.nav.pricing}
+                {translations.nav.pricing}
               </Link>
 
               {/* Resources */}
               <div
                 className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
                 onClick={() => toggleDropdown("Resources")}
+                style={{ fontFamily: "Suez one" }}
               >
                 <span>{translations.nav.resources}</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 ml-1 transform transition-transform ${
                     openDropdown === "Resources" ? "rotate-180" : ""
                   }`}
@@ -130,6 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             <Link
               href="/demo"
               className="hidden sm:block text-base lg:text-lg xl:text-[20px] font-normal hover:text-gray-200 transition-colors mr-3 sm:mr-4 lg:mr-[20px] whitespace-nowrap"
+              style={{ fontFamily: "Suez one" }}
             >
               {translations.nav.demo}
             </Link>
@@ -140,23 +148,26 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
             </div>
 
             {/* CTA Button - Responsive sizing */}
-            <button className="bg-[#6B8E23] hover:bg-[#9bb26c] rounded-md border border-[#9D9388] text-[#F0ECE7] font-bold font-averia transition-colors duration-200 cursor-pointer whitespace-nowrap
+            <button
+              className="flex items-center justify-center  bg-[#6B8E23] hover:bg-[#9bb26c] rounded-md border border-[#9D9388] text-[#F0ECE7] font-bold font-averia transition-colors duration-200 cursor-pointer whitespace-nowrap 
                              px-2 py-1 text-xs h-6 min-w-[100px]
                              sm:px-3 sm:py-1.5 sm:text-sm sm:h-7 sm:min-w-[120px]
                              lg:px-4 lg:py-1.5 lg:text-sm lg:h-[28px] lg:min-w-[130px]
-                             xl:text-[14px]">
-{translations.nav.cta}            </button>
+                             xl:text-[14px]"
+            >
+              {translations.nav.cta}{" "}
+            </button>
 
             {/* Mobile menu button */}
-            <button 
+            <button
               className="lg:hidden ml-2 sm:ml-3 text-white hover:text-gray-200 transition-colors"
               onClick={toggleMobileMenu}
             >
-              <Image 
-                src="/icons/arrows/ArrowSquareUp.svg" 
-                alt="Menu" 
-                width={24} 
-                height={24} 
+              <Image
+                src="/icons/arrows/ArrowSquareUp.svg"
+                alt="Menu"
+                width={24}
+                height={24}
                 className={`w-5 h-5 sm:w-6 sm:h-6 transform transition-transform ${
                   isMobileMenuOpen ? "rotate-180" : ""
                 }`}
@@ -181,11 +192,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                 }}
               >
                 <span>Product</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 transform transition-transform ${
                     isProductModalOpen ? "rotate-180" : ""
                   }`}
@@ -198,11 +209,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                 onClick={() => toggleDropdown("Solutions")}
               >
                 <span>Solutions</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 transform transition-transform ${
                     openDropdown === "Solutions" ? "rotate-180" : ""
                   }`}
@@ -224,11 +235,11 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
                 onClick={() => toggleDropdown("Resources")}
               >
                 <span>Resources</span>
-                <Image 
-                  src="/icons/arrows/ArrowSquareUp.svg" 
-                  alt="Arrow" 
-                  width={16} 
-                  height={16} 
+                <Image
+                  src="/icons/arrows/ArrowSquareUp.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
                   className={`w-4 h-4 transform transition-transform ${
                     openDropdown === "Resources" ? "rotate-180" : ""
                   }`}
@@ -254,10 +265,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
       )}
 
       {/* Product Modal */}
-      <ProductModal 
-        isOpen={isProductModalOpen}
-        triggerRef={productRef}
-      />
+      <ProductModal isOpen={isProductModalOpen} triggerRef={productRef} />
     </>
   );
 };

@@ -78,9 +78,10 @@ export default function LanguageDropdown() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1 text-[#F4F1EB] text-[20px] font-suez"
+        className="flex items-center gap-1 text-[#F4F1EB] text-[20px] "
+        style={{ fontFamily: "Suez one" }}
       >
-        <Image 
+        <Image
           src={getFlagForLanguage(selected.code)}
           alt={selected.label}
           width={15}
@@ -110,15 +111,16 @@ export default function LanguageDropdown() {
                 setOpen(false);
                 // Remove any existing locale prefix and get the clean path
                 let path = pathname;
-                const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
+                const locales = ["en", "ja", "ar", "es", "it", "fr", "ko"];
                 for (const locale of locales) {
                   if (path.startsWith(`/${locale}`)) {
-                    path = path.substring(locale.length + 1) || '/';
+                    path = path.substring(locale.length + 1) || "/";
                     break;
                   }
                 }
                 // If path is just '/', don't add it to avoid double slash
-                const newPath = path === '/' ? `/${lang.code}` : `/${lang.code}${path}`;
+                const newPath =
+                  path === "/" ? `/${lang.code}` : `/${lang.code}${path}`;
                 router.push(newPath);
               }}
               className="flex items-center  text-[#3C3C3C] h-[44px] px-3 cursor-pointer hover:bg-[#F4F1EB] "
@@ -129,14 +131,14 @@ export default function LanguageDropdown() {
                 fontWeight: "400px",
               }}
             >
-              <Image 
+              <Image
                 src={getFlagForLanguage(lang.code)}
                 alt={lang.label}
                 width={20}
                 height={20}
                 className="w-[20px] h-[20px] mr-2"
               />
-              <span className="flex-1">{lang.label}</span>
+              <span className="flex-1 ">{lang.label}</span>
               {selected.code === lang.code && (
                 <Image
                   src={TickCircle}

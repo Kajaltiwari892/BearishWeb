@@ -123,7 +123,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Company Logos Section - Fixed bottom space */}
-        <div className="flex-shrink-0 px-4 pb-4 mt-48">
+        <div className="flex-shrink-0  px-4 pb-4 mt-48">
           <div className="w-[90%] max-w-none mx-auto">
             
             {/* Heading */}
@@ -149,7 +149,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
 
             {/* Company logos - Responsive grid */}
-            <div className="grid gap-2 items-center opacity-80 mt-8" 
+            <div className="grid gap-2  items-center opacity-80 mt-4" 
                  style={{
                    gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
                    maxWidth: '100%'
