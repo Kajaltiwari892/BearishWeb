@@ -81,7 +81,7 @@ const IntelligentConnections: React.FC = () => {
         <div className="w-full h-32 bg-[#F0ECE7] mt-12 rounded-lg flex items-center justify-center">
           <p className="text-[#555555] text-sm">
             {" "}
-            Additional content will go here
+            Additional content will go here. 
           </p>
         </div>
       </div>
