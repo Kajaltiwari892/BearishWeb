@@ -9,6 +9,7 @@ import {
   Titan_One,
   Trykker,
   Tilt_Warp,
+  Syne_Mono,
 } from "next/font/google";
 
 // Load fonts as CSS variables
@@ -32,7 +33,7 @@ const averiaSans = Averia_Sans_Libre({
   variable: "--font-averiaSans",
   weight: "400",
 });  ;
-const syne = Syne({
+const syne = Syne_Mono({
   subsets: ["latin"],
   variable: "--font-syne",
   weight: "400",

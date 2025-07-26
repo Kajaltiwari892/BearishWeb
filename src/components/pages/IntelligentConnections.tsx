@@ -22,7 +22,7 @@ const IntelligentConnections: React.FC = () => {
 
   return (
     <section className="w-full bg-[#F8F7F4] py-16 px-4 flex flex-col items-center">
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-5xl mx-auto w-full">
         {/* Section Title */}
         <h2
           className="text-center text-[#3C3C3C] mb-12"
@@ -39,20 +39,18 @@ const IntelligentConnections: React.FC = () => {
           {translatedCards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#F4F1EB] rounded-lg p-4 flex flex-col items-center text-center border border-[#b3a89a70] mx-auto max-w-xs"
+              className="bg-[#F4F1EB] rounded-lg p-4 flex flex-col items-center text-center border border-[#b3a89a70]"
             >
-              {/* Card Title */}
               <h3
                 className="text-[#3C3C3C] mb-4 w-[80%]"
                 style={{
-                  fontFamily: "Averia Sans Libre",
+                  fontFamily: "Averia Serif Libre",
                   fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
                 }}
               >
                 {card.title}
               </h3>
 
-              {/* Card Image */}
               <div className="w-40 h-40 sm:w-48 sm:h-48 relative mb-6 rounded-lg flex items-center justify-center p-2">
                 <Image
                   src={imagePaths[index]}
@@ -63,11 +61,10 @@ const IntelligentConnections: React.FC = () => {
                 />
               </div>
 
-              {/* Card Description */}
               <p
                 className="text-[#3C3C3C] w-[70%]"
                 style={{
-                  fontFamily: "Averia Sans Libre",
+                  fontFamily: "Averia Serif Libre",
                   fontSize: "clamp(1rem, 1.3vw, 2rem)",
                 }}
               >
@@ -77,12 +74,59 @@ const IntelligentConnections: React.FC = () => {
           ))}
         </div>
 
-        {/* Dummy Horizontal Div */}
-        <div className="w-full h-32 bg-[#F0ECE7] mt-12 rounded-lg flex items-center justify-center">
-          <p className="text-[#555555] text-sm">
-            {" "}
-            Additional content will go here. 
-          </p>
+        {/* Productivity Agent Section - Similar to BEBA design */}
+        <div className="w-full bg-[#F4F1EB] mt-16 rounded-2xl border border-[#b3a89a68] p-6 md:p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Left side - Bear paw icon */}
+            <div className="flex-shrink-0">
+              <div className="w-28 h-28 md:w-44 md:h-44 relative">
+                <Image
+                  src="/images/IntelligentConnections/BearClaws.png"
+                  alt="BEBA Productivity Agent"
+                  width={174}
+                  height={174}
+                  className="object-contain "
+                />
+              </div>
+            </div>
+
+            {/* Right side - Content */}
+            <div className="flex-1 text-center md:ml-10  md:text-left">
+              <h2
+                className="text-[#3C3C3C] mb-3"
+                style={{
+                  fontFamily: "Suez One",
+                  fontSize: "clamp(1.4rem, 2.4vw, 2.1rem)",
+                  lineHeight: "1.2",
+                }}
+              >
+                BEBA. The #1 Productivity Agent
+              </h2>
+              <h3
+                className="text-[#3C3C3C] mb-4"
+                style={{
+                  fontFamily: "Suez One",
+                  fontSize: "clamp(1.1rem, 1.8vw, 1.6rem)",
+                  fontWeight: "normal",
+                  lineHeight: "1.3",
+                }}
+              >
+                for busy knowledge workers.
+              </h3>
+              <p
+                className="text-[#3C3C3C] max-w-2xl"
+                style={{
+                  fontFamily: "Averia Serif Libre",
+                  fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
+                  lineHeight: "1.5",
+                }}
+              >
+                BEBA empowers knowledge workers to achieve exponentially more.
+                Purpose-built to handle complex workflows, take proactive
+                action, and eliminate the busy work that slows teams down.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
