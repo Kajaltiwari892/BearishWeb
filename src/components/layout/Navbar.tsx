@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import BearishLogo from "@/assets/images/BearishLogo.png";
-import LanguageDropdown from "@/components/LanguageDropdown";
+import LanguageDropdown from "@/components/pages/Dropdowns/LanguageDropdown";
 import ProductModal from "@/components/modals/ProductModal";
 import { useTranslations } from "@/lib/i18n";
 
@@ -18,11 +18,35 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
   const productRef = useRef<HTMLDivElement>(null);
   const translations = useTranslations();
 
+  // Use a timeout to delay closing the modal
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const handleProductHover = () => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     setIsProductModalOpen(true);
   };
 
   const handleProductLeave = () => {
+    // Set a small delay before closing to allow moving to modal
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsProductModalOpen(false);
+    }, 100); // 100ms delay
+  };
+
+  const handleModalEnter = () => {
+    // Clear the close timeout when entering modal
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const handleModalLeave = () => {
+    // Close modal when leaving modal area
     setIsProductModalOpen(false);
   };
 
@@ -265,7 +289,12 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
       )}
 
       {/* Product Modal */}
-      <ProductModal isOpen={isProductModalOpen} triggerRef={productRef} />
+      <ProductModal
+        isOpen={isProductModalOpen}
+        triggerRef={productRef}
+        onMouseEnter={handleModalEnter}
+        onMouseLeave={handleModalLeave}
+      />
     </>
   );
 };

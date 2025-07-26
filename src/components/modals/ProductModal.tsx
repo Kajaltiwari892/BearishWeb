@@ -6,9 +6,16 @@ import Image from "next/image";
 interface ProductModalProps {
   isOpen: boolean;
   triggerRef?: React.RefObject<HTMLDivElement | null>;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
+const ProductModal: React.FC<ProductModalProps> = ({
+  isOpen,
+  triggerRef,
+  onMouseEnter,
+  onMouseLeave,
+}) => {
   if (!isOpen) return null;
 
   // Calculate position based on trigger element with cross-platform compatibility
@@ -17,7 +24,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
       const rect = triggerRef.current.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
-      
+
       // Get device pixel ratio for better cross-platform scaling
       const devicePixelRatio = window.devicePixelRatio || 1;
       const scaleFactor = Math.min(devicePixelRatio, 2);
@@ -29,13 +36,13 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           : viewportWidth < 1024
           ? Math.min(viewportWidth * 0.7, 650) // 70% of viewport width, max 650px
           : Math.min(viewportWidth * 0.5, 650); // 50% of viewport width, max 750px
-      
+
       // Dynamic height based on content and viewport
       const baseHeight = viewportWidth < 640 ? 320 : 420;
       const modalHeight = Math.min(baseHeight, viewportHeight * 0.8); // Max 80% of viewport height
 
       let left = rect.left;
-      let top = rect.bottom + (8 * scaleFactor);
+      let top = rect.bottom + 8 * scaleFactor;
 
       // Enhanced boundary checking with better margins
       const horizontalMargin = Math.max(16, viewportWidth * 0.02); // 2% of viewport or 16px minimum
@@ -51,7 +58,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
 
       // Ensure modal doesn't go off-screen vertically
       if (top + modalHeight > viewportHeight - verticalMargin) {
-        top = rect.top - modalHeight - (8 * scaleFactor);
+        top = rect.top - modalHeight - 8 * scaleFactor;
       }
       if (top < verticalMargin) {
         top = verticalMargin;
@@ -68,7 +75,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
     // Default position if no triggerRef with better responsive defaults
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-    
+
     const defaultWidth =
       viewportWidth < 640
         ? Math.min(viewportWidth * 0.95, 380)
@@ -103,6 +110,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
         MozOsxFontSmoothing: "grayscale",
         textRendering: "optimizeLegibility",
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {/* Modal Content */}
       <div
@@ -115,7 +124,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           style={{ fontFamily: "Averia Serif Libre" }}
         >
           {/* First Product Section */}
-          <div className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
+          <div className="space-y-1 hover:rounded-md hover:bg-[#f7f3ef] sm:space-y-1.5 mb-3 sm:mb-4">
             {" "}
             {/* Reduced margin */}
             <div className="flex items-center">
@@ -142,10 +151,10 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Second Product Section */}
-          <div className="space-y-1  sm:space-y-1.5 mb-3 sm:mb-4">
+          <div className="space-y-1 hover:rounded-md hover:bg-[#f7f3ef] sm:space-y-1.5 mb-3 sm:mb-4">
             {" "}
             {/* Reduced margin */}
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <Image
                 src="/icons/arrows/BebaAIIcon.svg"
                 alt="BEBA Agent Icon"
@@ -169,7 +178,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Third Product Section - Privacy & Security */}
-          <div className="space-y-1 sm:space-y-1.5">
+          <div className="space-y-1 hover:rounded-md hover:bg-[#f7f3ef] sm:space-y-1.5">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/securityPrivacy.svg"
@@ -196,11 +205,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
 
         {/* Divider */}
         <div className="h-px bg-gray-300 my-3 sm:hidden opacity-60"></div>
-        <div className="hidden sm:block w-px bg-gray-300 mx-2 opacity-60"></div>
+        <div className="hidden  sm:block w-px bg-gray-300 mx-2 opacity-60"></div>
 
         {/* Right Side - Features */}
         <div
-          className="flex-1 sm:pl-4"
+          className="flex-1  sm:pl-4"
           style={{ fontFamily: "Averia Serif Libre" }}
         >
           <h3
@@ -211,8 +220,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </h3>
 
           {/* Intelligent Connections */}
-          <div className="mb-2">
-            <div className="flex items-center">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef] ">
+            <div className="flex items-center ">
               <Image
                 src="/icons/arrows/intelligentConnections.svg"
                 alt="Intelligent Connections Icon"
@@ -235,7 +244,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Connected Communications */}
-          <div className="mb-2">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef]">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/ConnectedCommunications.svg"
@@ -259,7 +268,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Smart Project & Scheduling */}
-          <div className="mb-2">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef]">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/smartProjects.svg"
@@ -283,7 +292,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Unified Document Hub */}
-          <div className="mb-2">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef]">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/unifiedDocumentHub.svg"
@@ -307,7 +316,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Relationship Intelligence */}
-          <div className="mb-2">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef]">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/RelationshipIntelligence.svg"
@@ -331,7 +340,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, triggerRef }) => {
           </div>
 
           {/* Business Analytics */}
-          <div className="mb-2">
+          <div className="mb-2 hover:rounded-md hover:bg-[#f7f3ef]">
             <div className="flex items-center">
               <Image
                 src="/icons/arrows/BusinessAnalytics.svg"

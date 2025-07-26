@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import HeroBannerImg from "@/assets/images/HeroBanner.png";
-import Navbar from "../layout/Navbar";
+import Navbar from "../../layout/Navbar";
 import { useTranslations } from "@/lib/i18n";
 
 interface HeroSectionProps {
@@ -115,7 +115,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
             {/* company logo */}
             <div
-              className="flex items-center justify-between opacity-80 mt-4 w-full "
+              className="flex items-center md:justify-between justify-center flex-wrap gap-x-3 gap-y-2 opacity-80 mt-4 w-full"
               style={{
                 maxWidth: "100%",
               }}
@@ -123,7 +123,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {companyLogos.map((logo) => (
                 <div
                   key={logo.name}
-                  className="flex items-center justify-center text-center"
+                  className="flex items-center justify-center text-center flex-shrink-0"
                 >
                   <span
                     className={`text-[#F4F1EB] leading-tight whitespace-nowrap ${
@@ -131,7 +131,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     }`}
                     style={{
                       fontFamily: logo.fontFamily,
-                      fontSize: "clamp(0.75rem, 1.8vw, 2.3rem)",
+                      fontSize: "clamp(0.65rem, 1.8vw, 2.3rem)",
                     }}
                   >
                     {logo.name}
@@ -139,7 +139,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
               ))}
             </div>
-            
           </div>
         </div>
       </div>

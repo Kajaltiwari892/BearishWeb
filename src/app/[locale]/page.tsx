@@ -1,7 +1,9 @@
 // import Image from "next/image";
 
-import HeroSection from "@/components/pages/HeroSection";
-import IntelligentConnections from "@/components/pages/IntelligentConnections";
+import HeroSection from "@/components/pages/HomePage/HeroSection";
+import IntelligentConnections from "@/components/pages/HomePage/IntelligentConnections";
+import IntelligentlyConnect from "@/components/pages/HomePage/IntelligentlyConnect";
+import BusinessGrowth from "@/components/pages/HomePage/BusinessGrowth";
 
 const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
 
@@ -14,6 +16,8 @@ export default function Home() {
     <main className="flex flex-col w-full">
       <HeroSection/>
       <IntelligentConnections/>
+      <IntelligentlyConnect/>
+      <BusinessGrowth/>
     </main>
   );
 }
