@@ -249,7 +249,7 @@ export default function BusinessGrowth() {
 
           {/* Right Side - Screenshot */}
           <div className="flex-1 w-full flex justify-center lg:justify-start">
-            <div className="overflow-hidden w-full sm:w-auto lg:w-150 lg:h-auto lg:ml-16 lg:-mt-18">
+            <div className="overflow-hidden w-full sm:w-auto lg:w-166 lg:h-auto lg:ml-16 lg:-mt-18">
               <Image
                 src={current.screenshot}
                 alt="Business Growth Screenshot"
@@ -267,15 +267,15 @@ export default function BusinessGrowth() {
             {current.cards.map((card: FeatureCard, idx: number) => (
               <div
                 key={idx}
-                className="flex flex-col w-full sm:w-[48%] md:w-[42%] lg:w-[28%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-3 hover:shadow-lg transition-shadow duration-300 mr-0 sm:mr-2 mb-2"
+                className="flex flex-col w-full sm:w-[48%] md:w-[42%] lg:w-[30%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-3 hover:shadow-lg transition-shadow duration-300 mr-0 sm:mr-2 mb-2"
               >
                 {/* Icon and Title in one line */}
-                <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="flex  items-center gap-2.5 mb-2.5">
                   <div className="flex-shrink-0">
-                    <img src={card.icon} alt="icon" className="w-6 h-6" />
+                    <img src={card.icon} alt="icon" className="w-7 h-7" />
                   </div>
                   <h3
-                    className={`text-base ${card.color}`}
+                    className={`text-[1.2rem] ${card.color}`}
                     style={{ fontFamily: "Suez One" }}
                   >
                     {card.title}
@@ -284,7 +284,7 @@ export default function BusinessGrowth() {
                 {/* Description below */}
                 <div>
                   <p
-                    className={`${card.color} text-base leading-relaxed`}
+                    className={`${card.color}  w-[95%] text-[1.1rem] leading-relaxed`}
                     style={{ fontFamily: "Averia Serif Libre" }}
                   >
                     {card.description}

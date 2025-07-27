@@ -96,8 +96,9 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] mb-3"
                 style={{
                   fontFamily: "Suez One",
-                  fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
-                  lineHeight: "1.2",
+                   fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
+                   lineHeight: "1.2",
+                 
                 }}
               >
                 BEBA. The #1 Productivity Agent
@@ -117,8 +118,8 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] max-w-3xl"
                 style={{
                   fontFamily: "Averia Serif Libre",
-                 
-                 fontSize: "clamp(1.1rem, 1.6vw, 2.5rem)",
+
+                  fontSize: "clamp(1.1rem, 1.6vw, 2.5rem)",
                   lineHeight: "1.5",
                 }}
               >
