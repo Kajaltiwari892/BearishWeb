@@ -25,10 +25,10 @@ const IntelligentConnections: React.FC = () => {
       <div className="max-w-5xl mx-auto w-full">
         {/* Section Title */}
         <h2
-          className="text-center text-[#3C3C3C] mb-12"
+          className="text-center  text-[#3C3C3C] mb-12"
           style={{
             fontFamily: "Averia Sans Libre, serif",
-            fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+            fontSize: "clamp(1.75rem, 4vw, 2.9rem)",
           }}
         >
           {sectionTitle}
@@ -45,7 +45,7 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] mb-4 w-[80%]"
                 style={{
                   fontFamily: "Averia Serif Libre",
-                  fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
+                  fontSize: "clamp(1.25rem, 2vw, 2.5rem)",
                 }}
               >
                 {card.title}
@@ -62,10 +62,10 @@ const IntelligentConnections: React.FC = () => {
               </div>
 
               <p
-                className="text-[#3C3C3C] w-[70%]"
+                className="text-[#3C3C3C] w-[80%]"
                 style={{
                   fontFamily: "Averia Serif Libre",
-                  fontSize: "clamp(1rem, 1.3vw, 2rem)",
+                  fontSize: "clamp(1rem, 1.5vw, 2rem)",
                 }}
               >
                 {card.description}
@@ -79,11 +79,11 @@ const IntelligentConnections: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Left side - Bear paw icon */}
             <div className="flex-shrink-0">
-              <div className="w-28 h-28 md:w-44 md:h-44 relative">
+              <div className="w-28  h-28 md:w-46 md:h-44 relative">
                 <Image
                   src="/images/IntelligentConnections/BearClaws.png"
                   alt="BEBA Productivity Agent"
-                  width={174}
+                  width={474}
                   height={174}
                   className="object-contain "
                 />
@@ -96,7 +96,7 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] mb-3"
                 style={{
                   fontFamily: "Suez One",
-                  fontSize: "clamp(1.4rem, 2.4vw, 2.1rem)",
+                  fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
                   lineHeight: "1.2",
                 }}
               >
@@ -106,7 +106,7 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] mb-4"
                 style={{
                   fontFamily: "Suez One",
-                  fontSize: "clamp(1.1rem, 1.8vw, 1.6rem)",
+                  fontSize: "clamp(1.1rem, 2.5vw, 2.5rem)",
                   fontWeight: "normal",
                   lineHeight: "1.3",
                 }}
@@ -114,10 +114,11 @@ const IntelligentConnections: React.FC = () => {
                 for busy knowledge workers.
               </h3>
               <p
-                className="text-[#3C3C3C] max-w-2xl"
+                className="text-[#3C3C3C] max-w-3xl"
                 style={{
                   fontFamily: "Averia Serif Libre",
-                  fontSize: "clamp(0.9rem, 1.2vw, 1.05rem)",
+                 
+                 fontSize: "clamp(1.1rem, 1.6vw, 2.5rem)",
                   lineHeight: "1.5",
                 }}
               >
