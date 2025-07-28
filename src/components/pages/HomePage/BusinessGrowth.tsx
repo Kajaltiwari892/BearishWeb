@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useTranslations } from "@/lib/i18n";
 
 interface FeatureCard {
   icon: string;
@@ -46,126 +47,54 @@ const tabIconMap: Record<string, string> = {
   "growth-analytics": "/icons/BusinessGrowthIcons/trend-up.svg",
 };
 
-const businessGrowthData: Record<string, BusinessGrowthSection> = {
-  "relationship-intelligence": {
-    screenshot: "/images/BusinessGrwothSection/RelationshipIntelli.png",
-    color: "text-[#7B8C9F]",
-    tabColor: "text-[#7B8C9F]",
-    cards: [
-      {
-        icon: iconMap.relationshipIntell,
-        title: "Auto-Capture every Touchpoint",
-        description:
-          "Never update your CRM again, BEBA logs emails, calls, meetings, tasks and interactions automatically",
-        color: "text-[#7B8C9F]",
-      },
-      {
-        icon: iconMap.messages,
-        title: "Automated follow-up sequences",
-        description:
-          "BEBA schedules timed outreach based on customer behavior, scores prospects and gives you the script to close",
-        color: "text-[#7B8C9F]",
-      },
-      {
-        icon: iconMap.documentGrey,
-        title: "Complete interaction history",
-        description:
-          "Every conversation, document, and project connected to each contact so you never lose anything again",
-        color: "text-[#7B8C9F]",
-      },
-    ],
-  },
-  "project-orchestration": {
-    screenshot: "/images/BusinessGrwothSection/ProjectOrch.png",
-    color: "text-[#C96F53]",
-    tabColor: "text-[#C96F53]",
-    cards: [
-      {
-        icon: iconMap.intelligentTask,
-        title: "Intelligent task creation",
-        description:
-          "Create your own tasks or let BEBA convert ideas into structured projects with smart task breakdowns",
-        color: "text-[#C96F53]",
-      },
-      {
-        icon: iconMap.seamless,
-        title: "Seamless collaboration",
-        description:
-          "Tasks, docs, grids, files, and updates flow effortlessly—keeping every stakeholder perfectly in sync.",
-        color: "text-[#C96F53]",
-      },
-      {
-        icon: iconMap.status,
-        title: "Automated progress tracking",
-        description:
-          "Real-time updates across teams without manual status reports, instant notifications & so much more.",
-        color: "text-[#C96F53]",
-      },
-    ],
-  },
-  "streamline-communications": {
-    screenshot: "/images/BusinessGrwothSection/Streamline.png",
-    color: "text-[#8368A5]",
-    tabColor: "text-[#8368A5]",
-    cards: [
-      {
-        icon: iconMap.messagesPurple,
-        title: "Unified communication hub",
-        description:
-          "All emails, messages, and calls on one interface. From Slack to Teams and WhatsApp and those in between",
-        color: "text-[#8368A5]",
-      },
-      {
-        icon: iconMap.contextAware,
-        title: "Context-aware conversations",
-        description:
-          "BEBA automatically links discussions to relevant projects and contacts to ensure the project moves seamlessly forward",
-        color: "text-[#8368A5]",
-      },
-      {
-        icon: iconMap.documentPurple,
-        title: "Smart message routing",
-        description:
-          "AI prioritizes urgent communications and suggests optimal response timing to ensure the best results",
-        color: "text-[#8368A5]",
-      },
-    ],
-  },
-  "growth-analytics": {
-    screenshot: "/images/BusinessGrwothSection/GrwothAnalytics.png",
-    color: "text-[#6B8E23]",
-    tabColor: "text-[#6B8E23]",
-    cards: [
-      {
-        icon: iconMap.crossPlatform,
-        title: "Cross-platform insights",
-        description:
-          "Unified reporting across all business functions and data sources. Manage human resources from end to end.",
-        color: "text-[#6B8E23]",
-      },
-      {
-        icon: iconMap.performanceOpti,
-        title: "Performance optimization",
-        description:
-          "Identify what's working and automatically suggest improvements based on real insights",
-        color: "text-[#6B8E23]",
-      },
-      {
-        icon: iconMap.surfacedAI,
-        title: "Surfaced AI Insights",
-        description:
-          "BEBA automatically keeps tabs on whats happening delivering insights you didn't even know to look for",
-        color: "text-[#6B8E23]",
-      },
-    ],
-  },
+// Function to generate business growth data with translations
+const getBusinessGrowthData = (translations: any): Record<string, BusinessGrowthSection> => {
+  const iconMaps = {
+    "relationship-intelligence": [iconMap.relationshipIntell, iconMap.messages, iconMap.documentGrey],
+    "project-orchestration": [iconMap.intelligentTask, iconMap.seamless, iconMap.status],
+    "streamline-communications": [iconMap.messagesPurple, iconMap.contextAware, iconMap.documentPurple],
+    "growth-analytics": [iconMap.crossPlatform, iconMap.performanceOpti, iconMap.surfacedAI],
+  };
+
+  const screenshots = {
+    "relationship-intelligence": "/images/BusinessGrwothSection/RelationshipIntelli.png",
+    "project-orchestration": "/images/BusinessGrwothSection/ProjectOrch.png",
+    "streamline-communications": "/images/BusinessGrwothSection/Streamline.png",
+    "growth-analytics": "/images/BusinessGrwothSection/GrwothAnalytics.png",
+  };
+
+  const colors = {
+    "relationship-intelligence": "text-[#7B8C9F]",
+    "project-orchestration": "text-[#C96F53]",
+    "streamline-communications": "text-[#8368A5]",
+    "growth-analytics": "text-[#6B8E23]",
+  };
+
+  const data: Record<string, BusinessGrowthSection> = {};
+
+  Object.keys(translations.businessGrowth.cards).forEach((key) => {
+    data[key] = {
+      screenshot: screenshots[key as keyof typeof screenshots],
+      color: colors[key as keyof typeof colors],
+      tabColor: colors[key as keyof typeof colors],
+      cards: translations.businessGrowth.cards[key].map((card: any, index: number) => ({
+        icon: iconMaps[key as keyof typeof iconMaps][index],
+        title: card.title,
+        description: card.description,
+        color: colors[key as keyof typeof colors],
+      })),
+    };
+  });
+
+  return data;
 };
 
-const tabs = [
-  { id: "relationship-intelligence", label: "Relationship Intelligence" },
-  { id: "project-orchestration", label: "Project Orchestration" },
-  { id: "streamline-communications", label: "Streamline Communications" },
-  { id: "growth-analytics", label: "Growth Analytics" },
+// Function to generate tabs with translations
+const getTabs = (translations: any) => [
+  { id: "relationship-intelligence", label: translations.businessGrowth.tabs[0] },
+  { id: "project-orchestration", label: translations.businessGrowth.tabs[1] },
+  { id: "streamline-communications", label: translations.businessGrowth.tabs[2] },
+  { id: "growth-analytics", label: translations.businessGrowth.tabs[3] },
 ];
 
 const imageVariants: Variants = {
@@ -180,8 +109,7 @@ const imageVariants: Variants = {
     scale: 1,
     transition: {
       duration: 0.6,
-       ease: [0.25, 0.46, 0.45, 0.94],
-      
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
   exit: {
@@ -190,8 +118,7 @@ const imageVariants: Variants = {
     scale: 0.98,
     transition: {
       duration: 0.3,
-       ease: [0.25, 0.46, 0.45, 0.94],
-      
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
 };
@@ -217,8 +144,7 @@ const cardVariants: Variants = {
     scale: 1,
     transition: {
       duration: 0.5,
-       ease: [0.25, 0.46, 0.45, 0.94],
-    
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
 };
@@ -227,6 +153,13 @@ export default function BusinessGrowth() {
   const [activeTab, setActiveTab] = useState<string>(
     "relationship-intelligence"
   );
+  
+  const translations = useTranslations();
+  if (!translations) return null;
+
+  // Generate dynamic data and tabs from translations
+  const businessGrowthData = getBusinessGrowthData(translations);
+  const tabs = getTabs(translations);
   const current: BusinessGrowthSection = businessGrowthData[activeTab];
 
   const handleTabClick = (tabId: string) => {
@@ -249,9 +182,12 @@ export default function BusinessGrowth() {
             className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#23272E] mb-8 text-center sm:text-left leading-tight"
             style={{ fontFamily: "Suez One" }}
           >
-            From First Contact
-            <br />
-            to Business Growth
+            {translations.businessGrowth.sectionTitle.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < translations.businessGrowth.sectionTitle.split('\n').length - 1 && <br />}
+              </span>
+            ))}
           </h2>
         </motion.div>
 
@@ -352,7 +288,7 @@ export default function BusinessGrowth() {
 
           {/* Right Side - Screenshot with AnimatePresence */}
           <div className="flex-1 w-full flex justify-center lg:justify-start">
-            <div className="overflow-hidden w-full sm:w-auto lg:w-166 lg:h-auto lg:ml-16 lg:-mt-18">
+            <div className="overflow-hidden w-full sm:w-auto lg:w-179 lg:h-auto  lg:ml-16 lg:-mt-30">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -366,7 +302,7 @@ export default function BusinessGrowth() {
                     alt="Business Growth Screenshot"
                     width={600}
                     height={600}
-                    className="w-full h-auto object-cover"
+                    className="w-full  h-auto object-cover"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -387,7 +323,7 @@ export default function BusinessGrowth() {
               {current.cards.map((card: FeatureCard, idx: number) => (
                 <motion.div
                   key={`${activeTab}-${idx}`}
-                  className="flex flex-col w-full sm:w-[48%] md:w-[42%] lg:w-[30%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-3 hover:shadow-lg transition-shadow duration-300 mr-0 sm:mr-2 mb-2"
+                  className="flex flex-col w-full sm:w-[48%] md:w-[42%] lg:w-[31%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-3 hover:shadow-lg transition-shadow duration-300 mr-0 sm:mr-2 mb-2"
                   variants={cardVariants}
                   whileHover={{
                     scale: 1.02,

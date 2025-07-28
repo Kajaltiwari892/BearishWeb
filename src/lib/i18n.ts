@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react';
 import { useLocale } from './hooks/useLocale';
 
+interface SectionText {
+  sectionTitle: string;
+  SecSectionTitle?: string;
+  description: string;
+}
 interface CardItem{
   title: string;
   description: string;
 }
-
-interface IntelligentConnections {
-  sectionTitle: string;
+interface IntelligentConnections extends SectionText {
   cards: CardItem[];
-  additionalContent: string;
+}
+type BebaSection = SectionText;
+interface IntelligentlyConnectSection extends SectionText {
+  cards: CardItem[];
+}
+interface BusinessGrowthSection {
+  sectionTitle: string;
+  tabs: string[];
+  cards: Record<string, CardItem[]>;
 }
 interface Translation {
   hero: {
@@ -32,6 +43,10 @@ interface Translation {
     resources: string;
   };
   intelligentConnections: IntelligentConnections;
+  bebaSection: BebaSection;
+  intelligentlyConnect: IntelligentlyConnectSection;
+  businessGrowth: BusinessGrowthSection;
+  universalSearch: SectionText;
 }
 
 export function useTranslations() {

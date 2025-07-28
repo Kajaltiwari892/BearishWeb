@@ -22,6 +22,7 @@ export default function Home() {
       <BusinessGrowth />
       <UniversalSearch />
       <CompleteWorkflow />
+      
     </main>
   );
 }

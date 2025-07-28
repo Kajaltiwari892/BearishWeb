@@ -3,10 +3,16 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import PrivateFoundation from "./PrivateFoundation";
+import { useTranslations } from "@/lib/i18n";
 
 const UniversalSearch: React.FC = () => {
   const videoRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(videoRef, { once: true, margin: "-100px" });
+
+  const translations = useTranslations();
+  if (!translations) return null;
+
+  const { sectionTitle, description } = translations.universalSearch;
 
   return (
     <>
@@ -17,15 +23,13 @@ const UniversalSearch: React.FC = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-normal leading-none text-[#2C2C2C]"
             style={{ fontFamily: "Suez One" }}
           >
-            Universal Search
+           {sectionTitle}
           </h2>
           <p
             className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[1.75rem] w-full sm:w-[90%] md:w-[85%] lg:w-[80%] font-light text-[#666666] leading-normal"
             style={{ fontFamily: "Source Serif Pro" }}
           >
-            Never hunt for that document you know for sure you sent to your boss
-            again. From receipts to images to tasks no matter what you're
-            hunting for it's in Bearish.
+           {description}
           </p>
         </div>
 

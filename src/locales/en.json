@@ -34,5 +34,96 @@
         "description": "Built cleanly, incredibly simple yet powerful"
       }
     ]
+  },
+  "bebaSection": {
+    "sectionTitle": "BEBA. The #1 Productivity Agent ",
+    "SecSectionTitle": "for busy knowledge workers.",
+    "description": "BEBA empowers knowledge workers to achieve exponentially more. Purpose-built to handle complex workflows, take proactive action, and eliminate the busy work that slows teams down."
+  },
+  "intelligentlyConnect": {
+    "sectionTitle": "Intelligently Connect",
+    "description": "End the app jumping  bring Jira, Teams, Google Suite & 50+ other enterprise apps together, all working as one unified workspace, saving 3+ hours per user per day minimum.",
+    "cards": [
+      {
+        "title": "Replace the single apps",
+        "description": "Replace single-feature apps with one powerful platform—cut $3,000+ monthly and gain far more capability."
+      },
+      {
+        "title": "Automate the Rest",
+        "description": "Let BEBA handle tasks, emails, next steps, CRM updates, and workflows—fully autonomously or perfectly in sync with you."
+      }
+    ]
+  },
+  "businessGrowth": {
+    "sectionTitle": "From First Contact\nto Business Growth",
+    "tabs": [
+      "Relationship Intelligence",
+      "Project Orchestration",
+      "Streamline Communications",
+      "Growth Analytics"
+    ],
+    "cards": {
+      "relationship-intelligence": [
+        {
+          "title": "Auto-Capture every Touchpoint",
+          "description": "Never update your CRM again, BEBA logs emails, calls, meetings, tasks and interactions automatically"
+        },
+        {
+          "title": "Automated follow-up sequences",
+          "description": "BEBA schedules timed outreach based on customer behavior, scores prospects and gives you the script to close"
+        },
+        {
+          "title": "Complete interaction history",
+          "description": "Every conversation, document, and project connected to each contact so you never lose anything again"
+        }
+      ],
+      "project-orchestration": [
+        {
+          "title": "Intelligent task creation",
+          "description": "Create your own tasks or let BEBA convert ideas into structured projects with smart task breakdowns"
+        },
+        {
+          "title": "Seamless collaboration",
+          "description": "Tasks, docs, grids, files, and updates flow effortlessly—keeping every stakeholder perfectly in sync."
+        },
+        {
+          "title": "Automated progress tracking",
+          "description": "Real-time updates across teams without manual status reports, instant notifications & so much more."
+        }
+      ],
+      "streamline-communications": [
+        {
+          "title": "Unified communication hub",
+          "description": "All emails, messages, and calls on one interface. From Slack to Teams and WhatsApp and those in between"
+        },
+        {
+          "title": "Context-aware conversations",
+          "description": "BEBA automatically links discussions to relevant projects and contacts to ensure the project moves seamlessly forward"
+        },
+        {
+          "title": "Smart message routing",
+          "description": "AI prioritizes urgent communications and suggests optimal response timing to ensure the best results"
+        }
+      ],
+      "growth-analytics": [
+        {
+          "title": "Cross-platform insights",
+          "description": "Unified reporting across all business functions and data sources. Manage human resources from end to end."
+        },
+        {
+          "title": "Performance optimization",
+          "description": "Identify what's working and automatically suggest improvements based on real insights"
+        },
+        {
+          "title": "Surfaced AI Insights",
+          "description": "BEBA automatically keeps tabs on whats happening delivering insights you didn't even know to look for"
+        }
+      ]
+    }
+  },
+  
+  "universalSearch": {
+    "sectionTitle": "Universal Search",
+    "description": "Never hunt for that document you know for sure you sent to your boss again. From receipts to images to tasks — no matter what you're hunting for, it's in Bearish."
   }
 }

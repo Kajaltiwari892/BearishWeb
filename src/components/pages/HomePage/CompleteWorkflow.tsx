@@ -1,8 +1,32 @@
-
 "use client";
 
 import Image from "next/image";
 import React from "react";
+
+interface CardProps {
+  title: string;
+  description: string;
+  imageSrc?: string;
+}
+
+const cards: CardProps[] = [
+  {
+    title: "Client Project Delivery",
+    description:
+      "For agencies, consultancies, and professional services. Manage every client from first contact to final payment in one unified workspace.",
+  },
+  {
+    title: "Product Development",
+    description:
+      "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond.",
+    imageSrc: "/images/Completeworkflow/ProductDevelopement.png",
+  },
+  {
+    title: "Sales & Customer Success",
+    description:
+      "For businesses that want to grow revenue. Turn leads into loyal customers with seamless sales and relationship management.",
+  },
+];
 
 const CompleteWorkflow: React.FC = () => {
   return (
@@ -11,9 +35,8 @@ const CompleteWorkflow: React.FC = () => {
       <Image
         src="/images/Completeworkflow/workflowBackgroundImg.png"
         alt="Workflow Background"
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0"
+        fill
+        className="absolute inset-0 object-cover z-0"
       />
 
       {/* Overlay */}
@@ -26,64 +49,38 @@ const CompleteWorkflow: React.FC = () => {
           style={{ fontFamily: "Suez One" }}
         >
           Solutions: Complete Workflows,
-          <br />
-          Not Scattered Tools
+          <br /> Not Scattered Tools
         </h2>
 
         {/* Cards Container */}
         <div className="flex flex-wrap justify-between gap-6">
-          {/* Card 1 */}
-          <div className="bg-[#F4F1EB]/65 rounded-xl p-6 text-left shadow-md w-full sm:w-[48%] lg:w-[32%]">
-            <h3
-              className="text-[1.5rem] sm:text-[1.75rem] text-[#3C3C3C] mb-3"
-              style={{ fontFamily: "Suez One" }}
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-[#F4F1EB]/70 rounded-xl p-6 text-left shadow-md w-full sm:w-[48%] lg:w-[32%]"
             >
-              Client Project Delivery
-            </h3>
-            <p className="text-base sm:text-xl text-[#555]">
-              For agencies, consultancies, and professional services. Manage
-              every client from first contact to final payment in one unified
-              workspace.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-[#F4F1EB]/65 rounded-xl p-6 text-left shadow-md w-full sm:w-[48%] lg:w-[32%]">
-            <h3
-              className="text-[1.5rem] sm:text-[1.75rem] text-[#3C3C3C] mb-3"
-              style={{ fontFamily: "Suez One" }}
-            >
-              Product Development
-            </h3>
-            <p className="text-base sm:text-xl text-[#555] mb-4">
-              For tech companies and innovative startups. Coordinate your entire
-              team from planning to successful product launch, customer support
-              & beyond.
-            </p>
-            <div className="w-full h-auto">
-              <Image
-                src="/images/Completeworkflow/ProductDevelopement.png"
-                alt="Product Development"
-                width={400}
-                height={200}
-                className="rounded-md w-full object-contain"
-              />
+              <h3
+                className="text-[1.5rem] sm:text-[1.75rem] text-[#3C3C3C] mb-3"
+                style={{ fontFamily: "Suez One" }}
+              >
+                {card.title}
+              </h3>
+              <p className="text-base sm:text-xl text-[#555] mb-4">
+                {card.description}
+              </p>
+              {card.imageSrc && (
+                <div className="w-full h-auto">
+                  <Image
+                    src={card.imageSrc}
+                    alt={card.title}
+                    width={400}
+                    height={200}
+                    className="rounded-md w-full object-contain"
+                  />
+                </div>
+              )}
             </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-[#F4F1EB]/65 rounded-xl p-6 text-left shadow-md w-full sm:w-[48%] lg:w-[32%]">
-            <h3
-              className="text-[1.5rem] sm:text-[1.75rem] text-[#3C3C3C] mb-3"
-              style={{ fontFamily: "Suez One" }}
-            >
-              Sales & Customer Success
-            </h3>
-            <p className="text-base sm:text-xl text-[#555]">
-              For businesses that want to grow revenue. Turn leads into loyal
-              customers with seamless sales and relationship management.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -91,3 +88,4 @@ const CompleteWorkflow: React.FC = () => {
 };
 
 export default CompleteWorkflow;
+

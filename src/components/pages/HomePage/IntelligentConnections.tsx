@@ -10,8 +10,14 @@ const IntelligentConnections: React.FC = () => {
   const {
     sectionTitle,
     cards: translatedCards,
-    additionalContent,
   } = translations.intelligentConnections;
+
+  const {
+    sectionTitle: bebaSectionTitle,
+    description: bebaDescription,
+    SecSectionTitle:bebaSecSectionTitle,
+  } = translations.bebaSection;
+
 
   // Static image paths (order must match translation cards)
   const imagePaths = [
@@ -96,12 +102,11 @@ const IntelligentConnections: React.FC = () => {
                 className="text-[#3C3C3C] mb-3"
                 style={{
                   fontFamily: "Suez One",
-                   fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
-                   lineHeight: "1.2",
-                 
+                  fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
+                  lineHeight: "1.2",
                 }}
               >
-                BEBA. The #1 Productivity Agent
+                {bebaSectionTitle}
               </h2>
               <h3
                 className="text-[#3C3C3C] mb-4"
@@ -112,7 +117,7 @@ const IntelligentConnections: React.FC = () => {
                   lineHeight: "1.3",
                 }}
               >
-                for busy knowledge workers.
+                {bebaSecSectionTitle}
               </h3>
               <p
                 className="text-[#3C3C3C] max-w-3xl"
@@ -123,9 +128,7 @@ const IntelligentConnections: React.FC = () => {
                   lineHeight: "1.5",
                 }}
               >
-                BEBA empowers knowledge workers to achieve exponentially more.
-                Purpose-built to handle complex workflows, take proactive
-                action, and eliminate the busy work that slows teams down.
+                {bebaDescription}
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "@/lib/i18n";
 
 const IntelligentlyConnect: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -12,7 +13,12 @@ const IntelligentlyConnect: React.FC = () => {
   const [leftImageVisible, setLeftImageVisible] = useState(false);
   const [rightImageVisible, setRightImageVisible] = useState(false);
 
+  const translations = useTranslations();
+
   useEffect(() => {
+    // Only set up observers if translations are available
+    if (!translations || !translations.intelligentlyConnect) return;
+
     const observerOptions = {
       threshold: 0.3,
       rootMargin: "0px 0px -50px 0px",
@@ -57,7 +63,12 @@ const IntelligentlyConnect: React.FC = () => {
       leftImageObserver.disconnect();
       rightImageObserver.disconnect();
     };
-  }, []);
+  }, [translations]);
+
+  if (!translations || !translations.intelligentlyConnect) return null;
+
+  const { sectionTitle, description, cards } =
+    translations.intelligentlyConnect;
 
   return (
     <section className="w-full bg-[#F8F7F4] py-8 px-2 sm:py-12 sm:px-4 flex flex-col items-center">
@@ -117,7 +128,7 @@ const IntelligentlyConnect: React.FC = () => {
             lineHeight: 1.1,
           }}
         >
-          Intelligently Connect
+          {sectionTitle}
         </h1>
         <p
           className="text-[#3C3C3C] font-normal w-[87%] mb-8 text-left"
@@ -126,9 +137,7 @@ const IntelligentlyConnect: React.FC = () => {
             fontSize: "clamp(1.8rem, 2vw, 1.35rem)",
           }}
         >
-          End the app jumping - bring Jira, Teams, Google Suite & 50+ other
-          enterprise apps together, all working as one unified workspace, saving
-          3+ hours per user per day minimum.
+          {description}
         </p>
       </div>
 
@@ -163,7 +172,7 @@ const IntelligentlyConnect: React.FC = () => {
               fontSize: "clamp(1.1rem, 2.4vw, 3rem)",
             }}
           >
-            Replace the single apps
+            {translations.intelligentlyConnect.cards[0].title}
           </h2>
           <p
             className="text-[#3C3C3C] w-[100%] mb-4"
@@ -172,8 +181,7 @@ const IntelligentlyConnect: React.FC = () => {
               fontSize: "clamp(1.4rem, 1.5vw, 1.15rem)",
             }}
           >
-            Replace single-feature apps with one powerful platform—cut $3,000+
-            monthly and gain far more capability.
+            {translations.intelligentlyConnect.cards[0].description}
           </p>
           <div
             ref={leftImageRef}
@@ -206,7 +214,7 @@ const IntelligentlyConnect: React.FC = () => {
               fontSize: "clamp(1.1rem, 2.4vw, 3rem)",
             }}
           >
-            Automate the Rest
+            {translations.intelligentlyConnect.cards[1].title}
           </h2>
           <p
             className="text-[#3C3C3C] w-[110%] mb-4"
@@ -215,8 +223,7 @@ const IntelligentlyConnect: React.FC = () => {
               fontSize: "clamp(1.4rem, 1.5vw, 1.15rem)",
             }}
           >
-            Let BEBA handle tasks, emails, next steps, CRM updates, and
-            workflows—fully autonomously or perfectly in sync with you.
+            {translations.intelligentlyConnect.cards[1].description}
           </p>
           <div
             ref={rightImageRef}
@@ -233,7 +240,6 @@ const IntelligentlyConnect: React.FC = () => {
             />
           </div>
         </div>
-
         {/* Bottom horizontal line - match top line width and alignment */}
         <div
           className="absolute border border-[#d6d1c7] bottom-0 left-0 w-[100%] h-px bg-[#d6d1c7]"
@@ -243,5 +249,4 @@ const IntelligentlyConnect: React.FC = () => {
     </section>
   );
 };
-
 export default IntelligentlyConnect;
