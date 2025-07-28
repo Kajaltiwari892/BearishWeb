@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
+
 const PrivateFoundation: React.FC = () => {
   return (
     <section className="w-full px-4 sm:px-6 py-8 sm:py-12 md:py-20 flex flex-col md:flex-row items-start gap-6 sm:gap-8 md:gap-10 bg-[#F8F7F4]">
@@ -145,6 +147,7 @@ const PrivateFoundation: React.FC = () => {
           />
         </motion.div>
       </div>
+     
     </section>
   );
 };
