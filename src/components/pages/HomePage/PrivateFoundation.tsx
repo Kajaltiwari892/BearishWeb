@@ -13,7 +13,10 @@ const PrivateFoundation: React.FC = () => {
         >
           Built on a secure and private foundation
         </h2>
-        <p className="text-[#666666] font-light w-full sm:w-[95%] md:w-[90%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 sm:mb-8 md:mb-10 leading-normal md:ml-4 lg:ml-8">
+        <p
+          className="text-[#666666] font-light w-full sm:w-[95%] md:w-[90%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 sm:mb-8 md:mb-10 leading-normal md:ml-4 lg:ml-8"
+          style={{ fontFamily: "Source Serif Pro" }}
+        >
           What feels like natural work flow is actually advanced AI
           orchestration. Bearish OS transforms enterprise complexity into
           effortless productivity you focus on results while intelligent systems
@@ -23,10 +26,12 @@ const PrivateFoundation: React.FC = () => {
         {/* Features */}
         <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full md:w-[120%] mb-8 sm:mb-10 md:mb-12 text-gray-700 md:ml-4 lg:ml-8">
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 md:gap-10 items-start">
-            <h3 className="font-bold text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]">
+            <h3 className="font-bold text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]"
+            >
               Bearish Paths Engine
             </h3>
-            <p className="leading-normal max-w-full sm:max-w-md md:max-w-xs text-[#666666] text-base sm:text-lg md:text-[1.5rem] md:ml-[7rem]">
+            <p className="leading-normal max-w-full sm:max-w-md md:max-w-xs text-[#666666] text-base sm:text-lg md:text-[1.5rem] md:ml-[7rem]"
+            >
               Lightning-fast responses across every app your workflow moves at
               the speed of thought
             </p>

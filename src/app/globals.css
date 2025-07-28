@@ -6,6 +6,13 @@
   font-weight: 300;
   font-style: italic;
  }
+ 
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("/fonts/SourceSerifPro-Regular.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
  @layer base {
   html {
     scroll-behavior: smooth;

@@ -62,7 +62,7 @@ const UniversalSearch: React.FC = () => {
       {/* Divider Line */}
       <section className="w-full bg-[#F8F7F4]">
         <div className="px-4 md:px-10">
-          <div className="w-[80%] mx-auto border-t-[2.5px] border-[#B3A89A]" />
+          <div className="w-[90%] mx-auto border-t-[2.5px] border-[#b3a89a74]" />
         </div>
         <PrivateFoundation />
       </section>
