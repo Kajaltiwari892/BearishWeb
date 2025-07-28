@@ -236,7 +236,7 @@ export default function BusinessGrowth() {
   };
 
   return (
-    <section className="py-16 px-4 bg-[#F8F6F2]">
+    <section className="py-16 px-4 bg-gradient-to-b from-[#F4F1EB] to-[#E4DBC8]">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <motion.div

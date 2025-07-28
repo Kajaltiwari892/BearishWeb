@@ -4,6 +4,7 @@ import HeroSection from "@/components/pages/HomePage/HeroSection";
 import IntelligentConnections from "@/components/pages/HomePage/IntelligentConnections";
 import IntelligentlyConnect from "@/components/pages/HomePage/IntelligentlyConnect";
 import BusinessGrowth from "@/components/pages/HomePage/BusinessGrowth";
+import UniversalSearch from "@/components/pages/HomePage/UniversalSearch";
 
 const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
 
@@ -18,6 +19,7 @@ export default function Home() {
       <IntelligentConnections/>
       <IntelligentlyConnect/>
       <BusinessGrowth/>
+      <UniversalSearch/>
     </main>
   );
 }
