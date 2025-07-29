@@ -47,8 +47,20 @@ const tabIconMap: Record<string, string> = {
   "growth-analytics": "/icons/BusinessGrowthIcons/trend-up.svg",
 };
 
+interface CardTranslation {
+  title: string;
+  description: string;
+}
+
+interface BusinessGrowthTranslations {
+  businessGrowth: {
+    cards: Record<string, CardTranslation[]>;
+    tabs: string[];
+  };
+}
+
 // Function to generate business growth data with translations
-const getBusinessGrowthData = (translations: any): Record<string, BusinessGrowthSection> => {
+const getBusinessGrowthData = (translations: BusinessGrowthTranslations): Record<string, BusinessGrowthSection> => {
   const iconMaps = {
     "relationship-intelligence": [iconMap.relationshipIntell, iconMap.messages, iconMap.documentGrey],
     "project-orchestration": [iconMap.intelligentTask, iconMap.seamless, iconMap.status],
@@ -77,7 +89,7 @@ const getBusinessGrowthData = (translations: any): Record<string, BusinessGrowth
       screenshot: screenshots[key as keyof typeof screenshots],
       color: colors[key as keyof typeof colors],
       tabColor: colors[key as keyof typeof colors],
-      cards: translations.businessGrowth.cards[key].map((card: any, index: number) => ({
+      cards: translations.businessGrowth.cards[key].map((card: CardTranslation, index: number) => ({
         icon: iconMaps[key as keyof typeof iconMaps][index],
         title: card.title,
         description: card.description,
@@ -90,7 +102,7 @@ const getBusinessGrowthData = (translations: any): Record<string, BusinessGrowth
 };
 
 // Function to generate tabs with translations
-const getTabs = (translations: any) => [
+const getTabs = (translations: BusinessGrowthTranslations) => [
   { id: "relationship-intelligence", label: translations.businessGrowth.tabs[0] },
   { id: "project-orchestration", label: translations.businessGrowth.tabs[1] },
   { id: "streamline-communications", label: translations.businessGrowth.tabs[2] },
