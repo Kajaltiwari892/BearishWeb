@@ -19,7 +19,7 @@ const cards: CardProps[] = [
     title: "Product Development",
     description:
       "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond.",
-    imageSrc: "/images/Completeworkflow/ProductDevelopement.png",
+    imageSrc: "/images/CompleteWorkflow/ProductDevelopement.png",
   },
   {
     title: "Sales & Customer Success",
@@ -33,7 +33,7 @@ const CompleteWorkflow: React.FC = () => {
     <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8">
       {/* Background Image */}
       <Image
-        src="/images/Completeworkflow/workflowBackgroundImg.png"
+        src="/images/CompleteWorkflow/workflowBackgroundImg.png"
         alt="Workflow Background"
         fill
         className="absolute inset-0 object-cover z-0"
