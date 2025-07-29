@@ -13,7 +13,8 @@ interface CardProps {
 const CompleteWorkflow: React.FC = () => {
   const t = useTranslations();
   const cards: CardProps[] = t?.completeWorkflow?.cards || [];
-  const groups = chunkArray(cards, 3);
+  const [chunkSize, setChunkSize] = useState(3);
+  const groups = chunkArray(cards, chunkSize);
   const [current, setCurrent] = useState(0);
 
   function chunkArray<T>(arr: T[], size: number): T[][] {
@@ -26,6 +27,22 @@ const CompleteWorkflow: React.FC = () => {
 
   const prev = () => setCurrent((c) => Math.max(0, c - 1));
   const next = () => setCurrent((c) => Math.min(groups.length - 1, c + 1));
+
+  React.useEffect(() => {
+    function updateChunkSize() {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setChunkSize(1); // mobile
+      } else if (width < 1024) {
+        setChunkSize(2); // tablet
+      } else {
+        setChunkSize(3); // desktop
+      }
+    }
+    updateChunkSize();
+    window.addEventListener("resize", updateChunkSize);
+    return () => window.removeEventListener("resize", updateChunkSize);
+  }, []);
 
   const slideVariants = {
     animate: (index: number) => ({ x: `-${index * 100}%` }),
@@ -47,7 +64,14 @@ const CompleteWorkflow: React.FC = () => {
           className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-12 text-[#3C3C3C] text-left"
           style={{ fontFamily: "Suez One" }}
         >
-          {t?.completeWorkflow?.sectionTitle}
+          {t?.completeWorkflow?.sectionTitle
+            .split("\n")
+            .map((line: string, index: number, arr: string[]) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < arr.length - 1 && <br />}
+              </React.Fragment>
+            ))}
         </h2>
 
         {/* Slider container */}
@@ -110,14 +134,14 @@ const CompleteWorkflow: React.FC = () => {
           <button
             onClick={prev}
             disabled={current === 0}
-            className="absolute left-[-30] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute left-2 sm:left-[-30px] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t?.completeWorkflow?.prevButton}
           </button>
           <button
             onClick={next}
             disabled={current === groups.length - 1}
-            className="absolute right-[-30] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute right-2 sm:right-[-30px] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t?.completeWorkflow?.nextButton}
           </button>
