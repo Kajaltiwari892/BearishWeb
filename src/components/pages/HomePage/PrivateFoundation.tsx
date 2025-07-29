@@ -30,27 +30,37 @@ const PrivateFoundation: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-[#666666] font-light w-full sm:w-[95%] md:w-[90%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 sm:mb-8 md:mb-10 leading-normal md:ml-4 lg:ml-8"
-          style={{ fontFamily: "Source Serif Pro" }}
+          className="text-[#3C3C3C] font-light w-full sm:w-[95%] md:w-[90%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 sm:mb-8 md:mb-10 leading-normal md:ml-4 lg:ml-8 "
+          style={{ fontFamily: "var(--font-source)" }}
         >
           {translations.privateFoundation.paragraph}
         </motion.p>
 
         {/* Features */}
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full md:w-[120%] mb-8 sm:mb-10 md:mb-12 text-gray-700 md:ml-4 lg:ml-8">
+        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full md:w-[120%] mb-8 sm:mb-10 md:mb-12 text-[#3C3C3C]  md:ml-4 lg:ml-8">
           {translations.privateFoundation.features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 + index * 0.1 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: 0.4 + index * 0.1,
+              }}
               className="flex flex-col sm:flex-row gap-2 sm:gap-6 md:gap-10 items-start"
             >
-              <h3 className="font-bold text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]">
+              <h3
+                className="font-bold text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]"
+                style={{ fontFamily: "var(--font-source)" }}
+              >
                 {feature.title}
               </h3>
-              <p className="leading-normal max-w-full sm:max-w-md md:max-w-xs text-[#666666] text-base sm:text-lg md:text-[1.5rem] md:ml-[7rem]">
+              <p
+                className="leading-normal w-[410px] sm:max-w-md  text-[#3C3C3C]  text-base sm:text-lg md:text-[1.5rem] md:ml-[4rem]"
+                style={{ fontFamily: "var(--font-source)" }}
+              >
                 {feature.description}
               </p>
             </motion.div>
@@ -66,17 +76,33 @@ const PrivateFoundation: React.FC = () => {
           className="flex gap-4 mb-6 md:ml-4 lg:ml-8"
         >
           {[
-            { src: "/images/PrivateFoundation/SOCO2.png", alt: translations.privateFoundation.iconsAlt[0] },
-            { src: "/images/PrivateFoundation/ISO.png", alt: translations.privateFoundation.iconsAlt[1] },
-            { src: "/images/PrivateFoundation/GDPR.png", alt: translations.privateFoundation.iconsAlt[2] },
-            { src: "/images/PrivateFoundation/CGPA.png", alt: translations.privateFoundation.iconsAlt[3] }
+            {
+              src: "/images/PrivateFoundation/SOCO2.png",
+              alt: translations.privateFoundation.iconsAlt[0],
+            },
+            {
+              src: "/images/PrivateFoundation/ISO.png",
+              alt: translations.privateFoundation.iconsAlt[1],
+            },
+            {
+              src: "/images/PrivateFoundation/GDPR.png",
+              alt: translations.privateFoundation.iconsAlt[2],
+            },
+            {
+              src: "/images/PrivateFoundation/CGPA.png",
+              alt: translations.privateFoundation.iconsAlt[3],
+            },
           ].map((icon, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.9 + index * 0.1 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: 0.9 + index * 0.1,
+              }}
               className="flex flex-col items-center justify-center"
             >
               <Image
@@ -96,28 +122,37 @@ const PrivateFoundation: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.3 }}
-          className="text-sm sm:text-base md:text-[1rem] text-[#888888] max-w-xl leading-normal md:ml-4 lg:ml-8"
+          className="text-sm sm:text-base md:text-[1rem] text-[#3C3C3C]  max-w-3xl leading-normal md:ml-4 lg:ml-8"
+          style={{ fontFamily: "var(--font-source)" }}
         >
-          {translations.privateFoundation.footerNote.split("{0}").map((part, index) => (
-            <React.Fragment key={index}>
-              {part}
-              {index === 0 && (
-                <Link href="#" className="text-[#4d7985] hover:text-gray-700">
-                  {translations.privateFoundation.footerLinks[0]}
-                </Link>
-              )}
-              {index === 1 && (
-                <>
-                  {" "}
-                  and{" "}
-                  <Link href="#" className="text-[#4d7985] hover:text-gray-700">
-                    {translations.privateFoundation.footerLinks[1]}
+          {translations.privateFoundation.footerNote
+            .split("{0}")
+            .map((part, index) => (
+              <React.Fragment key={index}>
+                {part}
+                {index === 0 && (
+                  <Link
+                    href="#"
+                    className="text-[#4d7985] hover:text-[#386a7b]"
+                  >
+                    {translations.privateFoundation.footerLinks[0]}
                   </Link>
-                </>
-              )}
-            </React.Fragment>
-          ))}
-          {" "}policies here.
+                )}
+                {index === 1 && (
+                  <>
+                    {" "}
+                    and{" "}
+                    <Link
+                      href="#"
+                      className="text-[#4d7985] hover:text-[#386a7b]"
+                    >
+                      {translations.privateFoundation.footerLinks[1]}
+                    </Link>
+                  </>
+                )}
+              </React.Fragment>
+            ))}{" "}
+          policies here.
         </motion.p>
       </div>
 

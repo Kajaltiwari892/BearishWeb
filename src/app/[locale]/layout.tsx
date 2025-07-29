@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 import {
   Suez_One,
   Source_Serif_4,
@@ -21,7 +21,7 @@ const suez = Suez_One({
 const source = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-source",
-  weight: "400",
+  weight: "300",
 });
 
 const averia = Averia_Serif_Libre({
@@ -33,7 +33,7 @@ const averiaSans = Averia_Sans_Libre({
   subsets: ["latin"],
   variable: "--font-averiaSans",
   weight: "400",
-});  ;
+});
 const syne = Syne_Mono({
   subsets: ["latin"],
   variable: "--font-syne",
@@ -60,7 +60,7 @@ const tilt = Tilt_Warp({
   weight: "400",
 });
 
-const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
+const locales = ["en", "ja", "ar", "es", "it", "fr", "ko"];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -75,7 +75,7 @@ export default async function LocaleLayout({
 }) {
   // Await params before using its properties
   const { locale } = await params;
-  
+
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale)) {
     notFound();

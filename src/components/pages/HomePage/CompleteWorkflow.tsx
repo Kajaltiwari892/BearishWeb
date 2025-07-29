@@ -65,7 +65,10 @@ const CompleteWorkflow: React.FC = () => {
               >
                 {card.title}
               </h3>
-              <p className="text-base sm:text-xl text-[#555] mb-4">
+              <p
+                className="text-base sm:text-xl text-[#3C3C3C] mb-4"
+                style={{ fontFamily: "var(--font-source)" }}
+              >
                 {card.description}
               </p>
               {card.imageSrc && (
