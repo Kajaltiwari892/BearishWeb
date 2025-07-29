@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+ import { useEffect, useState } from 'react';
 import { useLocale } from './hooks/useLocale';
 
 interface SectionText {
@@ -22,6 +22,20 @@ interface BusinessGrowthSection {
   tabs: string[];
   cards: Record<string, CardItem[]>;
 }
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface PrivateFoundation {
+  heading: string;
+  paragraph: string;
+  features: Feature[];
+  iconsAlt: string[];
+  footerNote: string;
+  footerLinks: string[];
+}
+
 interface Translation {
   hero: {
     title: string;
@@ -47,6 +61,7 @@ interface Translation {
   intelligentlyConnect: IntelligentlyConnectSection;
   businessGrowth: BusinessGrowthSection;
   universalSearch: SectionText;
+  privateFoundation: PrivateFoundation;
 }
 
 export function useTranslations() {

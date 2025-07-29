@@ -121,9 +121,29 @@
       ]
     }
   },
-  
   "universalSearch": {
     "sectionTitle": "Universal Search",
     "description": "Never hunt for that document you know for sure you sent to your boss again. From receipts to images to tasks — no matter what you're hunting for, it's in Bearish."
+  },
+  "privateFoundation": {
+    "heading": "Built on a secure and private foundation",
+    "paragraph": "What feels like natural work flow is actually advanced AI orchestration. Bearish OS transforms enterprise complexity into effortless productivity you focus on results while intelligent systems handle everything else.",
+    "features": [
+      {
+        "title": "Bearish Paths Engine",
+        "description": "Lightning-fast responses across every app your workflow moves at the speed of thought"
+      },
+      {
+        "title": "Built to scale",
+        "description": "From solo teams to Fortune 500s unlock features and use cases as your business scales"
+      },
+      {
+        "title": "Enterprise Security",
+        "description": "Enterprise-level protection for every teams your data stays 100% private with industry leading standards"
+      }
+    ],
+    "iconsAlt": ["SOC2", "ISO", "GDPR", "CCPA"],
+    "footerNote": "Bearish OS is in compliance with SOC2 and ISO guidelines and is currently undergoing certification audits...Read our {0} and {1} policies here.",
+    "footerLinks": ["Open Security", "Open Privacy"]
   }
 }
