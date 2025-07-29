@@ -145,5 +145,37 @@
     "iconsAlt": ["SOC2", "ISO", "GDPR", "CCPA"],
     "footerNote": "Bearish OS is in compliance with SOC2 and ISO guidelines and is currently undergoing certification audits...Read our {0} and {1} policies here.",
     "footerLinks": ["Open Security", "Open Privacy"]
+  },
+  "completeWorkflow": {
+    "sectionTitle": "Solutions: Complete Workflows, Not Scattered Tools",
+    "cards": [
+      {
+        "title": "Client Project Delivery",
+        "description": "For agencies, consultancies, and professional services. Manage every client from first contact to final payment in one unified workspace."
+      },
+      {
+        "title": "Product Development",
+        "description": "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond."
+      },
+      {
+        "title": "Sales & Customer Success",
+        "description": "For businesses that want to grow revenue. Turn leads into loyal customers with seamless sales and relationship management."
+      },
+      {
+        "title": "Remote Team Operations",
+        "description": "For distributed teams and global organizations. Keep teams aligned and productive across time zones and projects."
+      },
+      {
+        "title": "Marketing & Content",
+        "description": "For marketing teams, content creators, and growth-focused companies. Plan campaigns, create content, manage socials, and track performance all in one place"
+      },
+      {
+        "title": "Operations & Compliance",
+        "description": "For finance, HR, and operations teams. Streamline internal processes, manage compliance, and keep  operations running smoothly."
+      }
+    ],
+    "navigationHint": "Use the arrows to see more solutions →",
+    "prevButton": "‹",
+    "nextButton": "›"
   }
 }
