@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface ProductModalProps {
@@ -16,7 +16,29 @@ const ProductModal: React.FC<ProductModalProps> = ({
   onMouseEnter,
   onMouseLeave,
 }) => {
-  if (!isOpen) return null;
+  const [isVisible, setIsVisible] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true);
+      // Double requestAnimationFrame for smoother initial state
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsVisible(true);
+        });
+      });
+    } else {
+      setIsVisible(false);
+      // Wait for animation to complete before unmounting
+      const timer = setTimeout(() => {
+        setShouldRender(false);
+      }, 300); // Match the CSS transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  if (!shouldRender) return null;
 
   // Calculate position based on trigger element with cross-platform compatibility
   const getModalPosition = () => {
@@ -98,8 +120,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
 
   return (
     <div
-      className="fixed z-[10000] rounded-lg bg-[#FDFDFC] shadow-lg border border-[#B3A89A]
-                 backdrop-blur-sm transition-all duration-200 ease-out"
+      className={`fixed z-[10000] rounded-lg bg-[#FDFDFC] shadow-lg border border-[#B3A89A]
+                 backdrop-blur-sm transform transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+                 ${isVisible 
+                   ? 'opacity-100 translate-y-0 scale-100' 
+                   : 'opacity-0 -translate-y-3 scale-[0.97]'
+                 }`}
       style={{
         top: `${position.top}px`,
         left: `${position.left}px`,
