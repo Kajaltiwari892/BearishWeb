@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "@/lib/i18n";
 
 interface CardProps {
   title: string;
@@ -9,51 +10,19 @@ interface CardProps {
   imageSrc?: string;
 }
 
-const cards: CardProps[] = [
-  {
-    title: "Client Project Delivery",
-    description:
-      "For agencies, consultancies, and professional services. Manage every client from first contact to final payment in one unified workspace.",
-  },
-  {
-    title: "Product Development",
-    description:
-      "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond.",
-    imageSrc: "/images/CompleteWorkflow/ProductDevelopement.png",
-  },
-  {
-    title: "Sales & Customer Success",
-    description:
-      "For businesses that want to grow revenue. Turn leads into loyal customers with seamless sales and relationship management.",
-  },
-  {
-    title: "Remote Team Operations",
-    description:
-      "For distributed teams and global organizations. Keep teams aligned and productive across time zones and projects.",
-  },
-  {
-    title: "Marketing & Content",
-    description:
-      "For marketing teams, content creators, and growth-focused companies. Plan campaigns, create content, manage socials, and track performance all in one place",
-  },
-  {
-    title: "Operations & Compliance",
-    description:
-      "For finance, HR, and operations teams. Streamline internal processes, manage compliance, and keep  operations running smoothly.",
-  },
-];
-
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
-  }
-  return chunks;
-}
-
 const CompleteWorkflow: React.FC = () => {
+  const t = useTranslations();
+  const cards: CardProps[] = t?.completeWorkflow?.cards || [];
   const groups = chunkArray(cards, 3);
   const [current, setCurrent] = useState(0);
+
+  function chunkArray<T>(arr: T[], size: number): T[][] {
+    const chunks: T[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+      chunks.push(arr.slice(i, i + size));
+    }
+    return chunks;
+  }
 
   const prev = () => setCurrent((c) => Math.max(0, c - 1));
   const next = () => setCurrent((c) => Math.min(groups.length - 1, c + 1));
@@ -78,8 +47,7 @@ const CompleteWorkflow: React.FC = () => {
           className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-12 text-[#3C3C3C] text-left"
           style={{ fontFamily: "Suez One" }}
         >
-          Solutions: Complete Workflows,
-          <br /> Not Scattered Tools
+          {t?.completeWorkflow?.sectionTitle}
         </h2>
 
         {/* Slider container */}
@@ -144,14 +112,14 @@ const CompleteWorkflow: React.FC = () => {
             disabled={current === 0}
             className="absolute left-[-30] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            ‹
+            {t?.completeWorkflow?.prevButton}
           </button>
           <button
             onClick={next}
             disabled={current === groups.length - 1}
             className="absolute right-[-30] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            ›
+            {t?.completeWorkflow?.nextButton}
           </button>
         </div>
 
@@ -161,7 +129,7 @@ const CompleteWorkflow: React.FC = () => {
             className="text-sm text-[white]/60"
             style={{ fontFamily: "var(--font-source)" }}
           >
-            Use the arrows to see more solutions →
+            {t?.completeWorkflow?.navigationHint}
           </p>
         </div>
       </div>

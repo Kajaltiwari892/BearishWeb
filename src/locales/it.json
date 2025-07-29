@@ -35,6 +35,149 @@
       }
     ],
     "additionalContent": "Contenuto aggiuntivo verrà aggiunto qui"
+  },
+  "bebaSection": {
+    "sectionTitle": "BEBA. L'agente di produttività n. 1",
+    "SecSectionTitle": "per i knowledge worker impegnati.",
+    "description": "BEBA permette ai knowledge worker di raggiungere risultati esponenzialmente maggiori. Progettato per gestire flussi di lavoro complessi, intraprendere azioni proattive ed eliminare il lavoro ripetitivo che rallenta i team."
+  },
+  "intelligentlyConnect": {
+    "sectionTitle": "Connessione intelligente",
+    "description": "Basta saltare tra le app: unisci Jira, Teams, Google Suite e oltre 50 altre app enterprise in un unico workspace, risparmiando almeno 3 ore per utente al giorno.",
+    "cards": [
+      {
+        "title": "Sostituisci le app singole",
+        "description": "Sostituisci le app con funzionalità singole con una piattaforma potente—taglia oltre 3.000 $ al mese e ottieni capacità molto maggiori."
+      },
+      {
+        "title": "Automatizza il resto",
+        "description": "Lascia che BEBA gestisca attività, email, passaggi successivi, aggiornamenti CRM e flussi di lavoro—completamente in autonomia o perfettamente sincronizzato con te."
+      }
+    ]
+  },
+  "businessGrowth": {
+    "sectionTitle": "Dal primo contatto\nalla crescita aziendale",
+    "tabs": [
+      "Intelligenza relazionale",
+      "Orchestrazione dei progetti",
+      "Snellire le comunicazioni",
+      "Analisi della crescita"
+    ],
+    "cards": {
+      "relationship-intelligence": [
+        {
+          "title": "Cattura automatica di ogni punto di contatto",
+          "description": "Non aggiornare mai più il tuo CRM: BEBA registra automaticamente email, chiamate, riunioni, attività e interazioni."
+        },
+        {
+          "title": "Sequenze di follow-up automatizzate",
+          "description": "BEBA programma contatti in base al comportamento del cliente, valuta i prospect e ti fornisce lo script per chiudere."
+        },
+        {
+          "title": "Cronologia completa delle interazioni",
+          "description": "Ogni conversazione, documento e progetto connesso a ciascun contatto, così non perderai mai più nulla."
+        }
+      ],
+      "project-orchestration": [
+        {
+          "title": "Creazione intelligente delle attività",
+          "description": "Crea le tue attività o lascia che BEBA converta le idee in progetti strutturati con suddivisioni intelligenti."
+        },
+        {
+          "title": "Collaborazione senza interruzioni",
+          "description": "Attività, documenti, tabelle, file e aggiornamenti fluiscono senza sforzo—mantenendo tutti gli stakeholder perfettamente sincronizzati."
+        },
+        {
+          "title": "Monitoraggio del progresso automatizzato",
+          "description": "Aggiornamenti in tempo reale tra i team senza report manuali, notifiche istantanee e molto altro."
+        }
+      ],
+      "streamline-communications": [
+        {
+          "title": "Hub di comunicazione unificato",
+          "description": "Tutte le email, messaggi e chiamate in un'unica interfaccia. Da Slack a Teams, WhatsApp e oltre."
+        },
+        {
+          "title": "Conversazioni contestualizzate",
+          "description": "BEBA collega automaticamente le discussioni ai progetti e ai contatti rilevanti per garantire che il progetto proceda senza intoppi."
+        },
+        {
+          "title": "Instradamento intelligente dei messaggi",
+          "description": "L’IA priorizza le comunicazioni urgenti e suggerisce il momento ottimale per rispondere, garantendo i migliori risultati."
+        }
+      ],
+      "growth-analytics": [
+        {
+          "title": "Insight multipiattaforma",
+          "description": "Report unificati su tutte le funzioni aziendali e fonti di dati. Gestisci le risorse umane a 360°."
+        },
+        {
+          "title": "Ottimizzazione delle prestazioni",
+          "description": "Identifica ciò che funziona e suggerisce automaticamente miglioramenti basati su dati reali."
+        },
+        {
+          "title": "Insight IA in evidenza",
+          "description": "BEBA monitora automaticamente cosa succede, offrendo insight che neanche sapevi di voler cercare."
+        }
+      ]
+    }
+  },
+  "universalSearch": {
+    "sectionTitle": "Ricerca Universale",
+    "description": "Non cercare più quel documento che sai di aver inviato al tuo capo. Dai ricevute alle immagini alle attività — qualunque cosa tu stia cercando, è in Bearish."
+  },
+  "privateFoundation": {
+    "heading": "Costruito su una base sicura e privata",
+    "paragraph": "Quello che sembra un flusso di lavoro naturale è in realtà un’orchestrazione avanzata IA. Bearish OS trasforma la complessità aziendale in produttività senza sforzo: tu ti concentri sui risultati mentre i sistemi intelligenti gestiscono tutto il resto.",
+    "features": [
+      {
+        "title": "Motore Bearish Paths",
+        "description": "Risposte rapidissime in ogni app: il tuo flusso di lavoro si muove alla velocità del pensiero."
+      },
+      {
+        "title": "Progettato per scalare",
+        "description": "Da team individuali alle Fortune 500: sblocca funzionalità e casi d’uso man mano che la tua azienda cresce."
+      },
+      {
+        "title": "Sicurezza enterprise",
+        "description": "Protezione a livello enterprise per tutti i team: i tuoi dati restano 100% privati con standard di settore leader."
+      }
+    ],
+    "iconsAlt": ["SOC2", "ISO", "GDPR", "CCPA"],
+    "footerNote": "Bearish OS è conforme alle linee guida SOC2 e ISO ed è attualmente soggetto ad audit di certificazione...Leggi le nostre politiche {0} e {1} qui.",
+    "footerLinks": ["Sicurezza Aperta", "Privacy Aperta"]
+  },
+  "completeWorkflow": {
+    "sectionTitle": "Soluzioni: flussi di lavoro completi, non strumenti dispersi",
+    "cards": [
+      {
+        "title": "Consegna progetti clienti",
+        "description": "Per agenzie, consulenze e servizi professionali. Gestisci ogni cliente dal primo contatto al pagamento finale in un workspace unificato."
+      },
+      {
+        "title": "Sviluppo del prodotto",
+        "description": "Per aziende tech e startup innovative. Coordina tutto il team dalla pianificazione al lancio del prodotto, supporto clienti e oltre.",
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
+      },
+      {
+        "title": "Vendite e successo clienti",
+        "description": "Per aziende che vogliono aumentare i ricavi. Trasforma i lead in clienti fedeli con una gestione fluida delle vendite e delle relazioni."
+      },
+      {
+        "title": "Operazioni team remoti",
+        "description": "Per team distribuiti e organizzazioni globali. Mantieni team allineati e produttivi attraverso fusi orari e progetti."
+      },
+      {
+        "title": "Marketing e contenuti",
+        "description": "Per team di marketing, creatori di contenuti e aziende focalizzate sulla crescita. Pianifica campagne, crea contenuti, gestisci i social e monitora le performance, tutto in un unico posto."
+      },
+      {
+        "title": "Operazioni e conformità",
+        "description": "Per team finance, HR e operations. Semplifica i processi interni, gestisci la conformità e mantieni operative le attività."
+      }
+    ],
+    "navigationHint": "Usa le frecce per vedere più soluzioni →",
+    "prevButton": "‹",
+    "nextButton": "›"
   }
-
 }

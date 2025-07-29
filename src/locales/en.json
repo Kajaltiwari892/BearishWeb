@@ -151,11 +151,12 @@
     "cards": [
       {
         "title": "Client Project Delivery",
-        "description": "For agencies, consultancies, and professional services. Manage every client from first contact to final payment in one unified workspace."
+        "description": "For agencies, consultancies, and professional services. Manage every client from first contact to final payment in one unified workspace." 
       },
       {
         "title": "Product Development",
-        "description": "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond."
+        "description": "For tech companies and innovative startups. Coordinate your entire team from planning to successful product launch, customer support & beyond.",
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
       },
       {
         "title": "Sales & Customer Success",

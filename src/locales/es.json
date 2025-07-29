@@ -18,7 +18,7 @@
     "resources": "Recursos",
     "cta": "Comienza a ahorrar ahora"
   },
-  
+
   "intelligentConnections": {
     "sectionTitle": "Conexiones Inteligentes que Transforman el Trabajo",
     "cards": [
@@ -35,6 +35,150 @@
         "description": "Construido de forma limpia, increíblemente simple pero potente"
       }
     ]
-  }
+  },
+  "bebaSection": {
+    "sectionTitle": "BEBA. El agente de productividad nº 1",
+    "SecSectionTitle": "para trabajadores del conocimiento muy ocupados.",
+    "description": "BEBA empodera a los trabajadores del conocimiento para lograr exponencialmente más. Diseñado específicamente para manejar flujos de trabajo complejos, tomar acciones proactivas y eliminar el trabajo tedioso que ralentiza a los equipos."
+  },
+  "intelligentlyConnect": {
+    "sectionTitle": "Conexión Inteligente",
+    "description": "Olvídate de cambiar entre aplicaciones: reúne Jira, Teams, Google Suite y más de 50 aplicaciones empresariales en un solo espacio de trabajo unificado, ahorrando al menos 3 horas por usuario y por día.",
+    "cards": [
+      {
+        "title": "Reemplazar las aplicaciones individuales",
+        "description": "Sustituye las apps de una sola función por una plataforma potente: reduce más de 3.000 $ mensuales y gana mucha más capacidad."
+      },
+      {
+        "title": "Automatizar el resto",
+        "description": "Deja que BEBA gestione tareas, correos electrónicos, próximos pasos, actualizaciones de CRM y flujos de trabajo, ya sea de forma totalmente autónoma o perfectamente sincronizada contigo."
+      }
+    ]
+  },
+  "businessGrowth": {
+    "sectionTitle": "Desde el primer contacto\nhasta el crecimiento\nempresarial",
+    "tabs": [
+      "Inteligencia de relaciones",
+      "Orquestación de proyectos",
+      "Simplificar comunicaciones",
+      "Análisis de crecimiento"
+    ],
+    "cards": {
+      "relationship-intelligence": [
+        {
+          "title": "Captura automática de todos los puntos de contacto",
+          "description": "Nunca vuelvas a actualizar tu CRM, BEBA registra correos electrónicos, llamadas, reuniones, tareas e interacciones automáticamente"
+        },
+        {
+          "title": "Secuencias de seguimiento automáticas",
+          "description": "BEBA programa contactos en base al comportamiento del cliente, califica prospectos y te proporciona el guión para cerrar"
+        },
+        {
+          "title": "Historial completo de interacciones",
+          "description": "Cada conversación, documento y proyecto conectado a cada contacto para que nunca vuelvas a perder nada"
+        }
+      ],
+      "project-orchestration": [
+        {
+          "title": "Creación inteligente de tareas",
+          "description": "Crea tus propias tareas o deja que BEBA convierta ideas en proyectos estructurados con desgloses de tareas inteligentes"
+        },
+        {
+          "title": "Colaboración fluida",
+          "description": "Tareas, documentos, cuadrículas, archivos y actualizaciones fluyen sin esfuerzo, manteniendo a todos los involucrados perfectamente sincronizados."
+        },
+        {
+          "title": "Seguimiento de progreso automatizado",
+          "description": "Actualizaciones en tiempo real entre equipos sin informes de estado manuales, notificaciones instantáneas y mucho más."
+        }
+      ],
+      "streamline-communications": [
+        {
+          "title": "Centro de comunicación unificado",
+          "description": "Todos los correos, mensajes y llamadas en una sola interfaz. De Slack a Teams, WhatsApp y otros."
+        },
+        {
+          "title": "Conversaciones contextuales",
+          "description": "BEBA vincula automáticamente las discusiones con proyectos y contactos relevantes para asegurar que el proyecto avance sin problemas"
+        },
+        {
+          "title": "Enrutamiento inteligente de mensajes",
+          "description": "La IA prioriza las comunicaciones urgentes y sugiere el momento óptimo de respuesta para garantizar los mejores resultados"
+        }
+      ],
+      "growth-analytics": [
+        {
+          "title": "Información multiplataforma",
+          "description": "Informes unificados en todas las funciones empresariales y fuentes de datos. Gestiona los recursos humanos de principio a fin."
+        },
+        {
+          "title": "Optimización del rendimiento",
+          "description": "Identifica lo que funciona y sugiere automáticamente mejoras basadas en datos reales"
+        },
+        {
+          "title": "Información de IA destacada",
+          "description": "BEBA supervisa automáticamente lo que sucede, brindando información que ni siquiera sabías que debías buscar"
+        }
+      ]
+    }
+  },
 
+  "universalSearch": {
+    "sectionTitle": "Búsqueda Universal",
+    "description": "Nunca vuelvas a buscar ese documento que sabes que le enviaste a tu jefe. Desde recibos hasta imágenes y tareas: no importa qué busques, está en Bearish."
+  },
+  "privateFoundation": {
+    "heading": "Construido sobre una base segura y privada",
+    "paragraph": "Lo que parece un flujo de trabajo natural es en realidad una orquestación avanzada de IA. Bearish OS transforma la complejidad empresarial en productividad sin esfuerzo: tú te centras en los resultados mientras los sistemas inteligentes se encargan de todo lo demás.",
+    "features": [
+      {
+        "title": "Motor Bearish Paths",
+        "description": "Respuestas ultrarrápidas en cada aplicación; tu flujo de trabajo se mueve a la velocidad del pensamiento"
+      },
+      {
+        "title": "Diseñado para escalar",
+        "description": "Desde equipos individuales hasta Fortune 500: desbloquea funciones y casos de uso a medida que tu empresa crece"
+      },
+      {
+        "title": "Seguridad Empresarial",
+        "description": "Protección a nivel empresarial para todos los equipos; tus datos permanecen 100 % privados con estándares líderes en la industria"
+      }
+    ],
+    "iconsAlt": ["SOC2", "ISO", "GDPR", "CCPA"],
+    "footerNote": "Bearish OS cumple con las directrices SOC2 e ISO y actualmente está en proceso de auditorías de certificación... Lee nuestras políticas de {0} y {1} aquí.",
+    "footerLinks": ["Seguridad Abierta", "Privacidad Abierta"]
+  },
+  "completeWorkflow": {
+    "sectionTitle": "Soluciones: Flujos de trabajo completos, no herramientas dispersas",
+    "cards": [
+      {
+        "title": "Entrega de proyectos de clientes",
+        "description": "Para agencias, consultorías y servicios profesionales. Gestiona cada cliente desde el primer contacto hasta el pago final en un espacio de trabajo unificado."
+      },
+      {
+        "title": "Desarrollo de producto",
+        "description": "Para empresas tecnológicas y startups innovadoras. Coordina a todo tu equipo desde la planificación hasta el lanzamiento exitoso del producto, soporte al cliente y más.",
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
+      },
+      {
+        "title": "Ventas y éxito del cliente",
+        "description": "Para empresas que quieren aumentar sus ingresos. Convierte prospectos en clientes leales con una gestión fluida de ventas y relaciones."
+      },
+      {
+        "title": "Operaciones de equipos remotos",
+        "description": "Para equipos distribuidos y organizaciones globales. Mantén a los equipos alineados y productivos a través de zonas horarias y proyectos."
+      },
+      {
+        "title": "Marketing y contenido",
+        "description": "Para equipos de marketing, creadores de contenido y empresas enfocadas en el crecimiento. Planifica campañas, crea contenido, gestiona redes sociales y realiza un seguimiento del rendimiento, todo en un solo lugar."
+      },
+      {
+        "title": "Operaciones y cumplimiento",
+        "description": "Para equipos de finanzas, recursos humanos y operaciones. Optimiza los procesos internos, gestiona el cumplimiento y asegura un funcionamiento fluido de las operaciones."
+      }
+    ],
+    "navigationHint": "Usa las flechas para ver más soluciones →",
+    "prevButton": "‹",
+    "nextButton": "›"
+  }
 }

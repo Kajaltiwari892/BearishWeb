@@ -9,6 +9,7 @@ interface SectionText {
 interface CardItem{
   title: string;
   description: string;
+  imageSrc?: string;
 }
 interface IntelligentConnections extends SectionText {
   cards: CardItem[];
@@ -34,6 +35,14 @@ interface PrivateFoundation {
   iconsAlt: string[];
   footerNote: string;
   footerLinks: string[];
+}
+
+interface CompleteWorkflowSection {
+  sectionTitle: string;
+  cards: CardItem[];
+  navigationHint: string;
+  prevButton: string;
+  nextButton: string;
 }
 
 interface Translation {
@@ -62,6 +71,7 @@ interface Translation {
   businessGrowth: BusinessGrowthSection;
   universalSearch: SectionText;
   privateFoundation: PrivateFoundation;
+  completeWorkflow: CompleteWorkflowSection;
 }
 
 export function useTranslations() {

@@ -18,7 +18,7 @@
     "resources": "Ressources",
     "cta": "Commencez à économiser maintenant"
   },
-  
+
   "intelligentConnections": {
     "sectionTitle": "Connexions intelligentes qui transforment le travail",
     "cards": [
@@ -34,7 +34,152 @@
         "title": "Conçu élégamment à la perfection",
         "description": "Construit proprement, incroyablement simple mais puissant"
       }
+    ]
+  },
+  
+  "bebaSection": {
+    "sectionTitle": "BEBA. L’agent de productivité n° 1",
+    "SecSectionTitle": "pour les travailleurs du savoir occupés.",
+    "description": "BEBA permet aux travailleurs du savoir d’accomplir bien plus. Conçu pour gérer des flux de travail complexes, passer à l’action de manière proactive et éliminer les tâches chronophages qui freinent les équipes."
+  },
+  "intelligentlyConnect": {
+    "sectionTitle": "Connexion intelligente",
+    "description": "Finies les navettes entre applications : rassemblez Jira, Teams, Google Suite et plus de 50 autres applications d’entreprise dans un même espace de travail unifié, pour économiser au moins 3 heures par utilisateur et par jour.",
+    "cards": [
+      {
+        "title": "Remplacer les applications uniques",
+        "description": "Remplacez les applications à fonctionnalité unique par une plateforme puissante — réduisez vos coûts de plus de 3 000 $ par mois tout en gagnant en capacités."
+      },
+      {
+        "title": "Automatiser le reste",
+        "description": "Laissez BEBA gérer tâches, e‑mails, étapes suivantes, mises à jour CRM et flux de travail — entièrement de manière autonome ou en parfaite synchronisation avec vous."
+      }
+    ]
+  },
+  "businessGrowth": {
+    "sectionTitle": "Du premier contact\nà la croissance\nde l’entreprise",
+    "tabs": [
+      "Intelligence relationnelle",
+      "Orchestration de projet",
+      "Fluidification des communications",
+      "Analyse de croissance"
     ],
-    "additionalContent": "Du contenu supplémentaire sera ajouté ici"
+    "cards": {
+      "relationship-intelligence": [
+        {
+          "title": "Capture automatique de chaque point de contact",
+          "description": "Ne mettez plus jamais à jour votre CRM, BEBA enregistre automatiquement les e‑mails, appels, réunions, tâches et interactions"
+        },
+        {
+          "title": "Séquences de relance automatisées",
+          "description": "BEBA planifie des actions en fonction du comportement client, évalue les prospects et vous fournit le script pour conclure"
+        },
+        {
+          "title": "Historique complet des interactions",
+          "description": "Chaque conversation, document et projet relié à chaque contact pour ne rien perdre"
+        }
+      ],
+      "project-orchestration": [
+        {
+          "title": "Création de tâches intelligente",
+          "description": "Créez vos propres tâches ou laissez BEBA transformer vos idées en projets structurés avec des décompositions intelligentes"
+        },
+        {
+          "title": "Collaboration transparente",
+          "description": "Tâches, documents, tableaux, fichiers et mises à jour circulent sans effort — tous les acteurs restent parfaitement synchronisés"
+        },
+        {
+          "title": "Suivi de progression automatisé",
+          "description": "Mises à jour en temps réel entre les équipes sans rapports manuels, notifications instantanées et bien plus encore"
+        }
+      ],
+      "streamline-communications": [
+        {
+          "title": "Hub de communication unifié",
+          "description": "Tous les e‑mails, messages et appels sur une même interface. De Slack à Teams, WhatsApp et plus encore"
+        },
+        {
+          "title": "Conversations contextuelles",
+          "description": "BEBA lie automatiquement les discussions aux projets et contacts pertinents pour que tout avance sans accroc"
+        },
+        {
+          "title": "Routage intelligent des messages",
+          "description": "L’IA priorise les communications urgentes et suggère le meilleur moment pour répondre afin d’optimiser les résultats"
+        }
+      ],
+      "growth-analytics": [
+        {
+          "title": "Insights multiplateformes",
+          "description": "Rapports unifiés sur toutes les fonctions et sources de données de l’entreprise. Gérez les ressources humaines de bout en bout."
+        },
+        {
+          "title": "Optimisation des performances",
+          "description": "Identifiez ce qui fonctionne et suggérez automatiquement des améliorations basées sur de véritables analyses"
+        },
+        {
+          "title": "Insights IA mis en avant",
+          "description": "BEBA surveille automatiquement ce qui se passe et livre des insights auxquels vous n’aviez même pas pensé"
+        }
+      ]
+    }
+  },
+
+  "universalSearch": {
+    "sectionTitle": "Recherche Universelle",
+    "description": "Ne cherchez plus ce document dont vous êtes sûr – de reçus aux images en passant par les tâches, quoi que vous recherchiez, c’est dans Bearish."
+  },
+  "privateFoundation": {
+    "heading": "Construit sur une base sécurisée et privée",
+    "paragraph": "Ce qui ressemble à un flux de travail naturel est en réalité une orchestration avancée par IA. Bearish OS transforme la complexité de l’entreprise en productivité sans effort : vous vous concentrez sur les résultats pendant que les systèmes intelligents gèrent tout le reste.",
+    "features": [
+      {
+        "title": "Moteur Bearish Paths",
+        "description": "Réponses ultra‑rapides dans chaque application : votre flux de travail avance à la vitesse de la pensée"
+      },
+      {
+        "title": "Conçu pour évoluer",
+        "description": "Des équipes individuelles aux Fortune 500, débloquez des fonctionnalités et des cas d’usage à mesure que votre entreprise se développe"
+      },
+      {
+        "title": "Sécurité d’entreprise",
+        "description": "Protection de niveau entreprise pour toutes les équipes : vos données restent 100 % privées grâce à des normes de pointe"
+      }
+    ],
+    "iconsAlt": ["SOC2", "ISO", "GDPR", "CCPA"],
+    "footerNote": "Bearish OS est conforme aux directives SOC2 et ISO et fait actuellement l’objet d’audits de certification… Lisez nos politiques de {0} et de {1} ici.",
+    "footerLinks": ["Sécurité ouverte", "Confidentialité ouverte"]
+  },
+  "completeWorkflow": {
+    "sectionTitle": "Solutions : flux de travail complets, non outils épars",
+    "cards": [
+      {
+        "title": "Livraison de projets clients",
+        "description": "Pour les agences, cabinets de conseil et services professionnels. Gérez chaque client du premier contact jusqu’au paiement final dans un espace de travail unifié."
+      },
+      {
+        "title": "Développement de produit",
+        "description": "Pour les entreprises technologiques et les startups innovantes. Coordonnez l’ensemble de votre équipe, de la planification au lancement réussi du produit, en passant par le support client et au‑delà.",
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
+      },
+      {
+        "title": "Ventes et réussite client",
+        "description": "Pour les entreprises souhaitant accroître leurs revenus. Transformez les prospects en clients fidèles grâce à une gestion fluide des ventes et des relations."
+      },
+      {
+        "title": "Opérations d’équipes à distance",
+        "description": "Pour les équipes distribuées et les organisations mondiales. Maintenez l’alignement et la productivité des équipes à travers les fuseaux horaires et les projets."
+      },
+      {
+        "title": "Marketing et contenu",
+        "description": "Pour les équipes marketing, créateurs de contenu et entreprises axées sur la croissance. Planifiez des campagnes, créez du contenu, gérez les réseaux sociaux et suivez les performances, le tout au même endroit."
+      },
+      {
+        "title": "Opérations et conformité",
+        "description": "Pour les équipes finance, RH et opérations. Rationalisez les processus internes, gérez la conformité et assurez le bon fonctionnement des opérations."
+      }
+    ],
+    "navigationHint": "Utilisez les flèches pour voir plus de solutions →",
+    "prevButton": "‹",
+    "nextButton": "›"
   }
 }

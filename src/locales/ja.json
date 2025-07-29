@@ -155,7 +155,8 @@
       },
       {
         "title": "製品開発",
-        "description": "テック企業や革新的なスタートアップ向け。計画から成功した製品の発売、カスタマーサポートまで、チーム全体を調整します。"
+        "description": "テック企業や革新的なスタートアップ向け。計画から成功した製品の発売、カスタマーサポートまで、チーム全体を調整します。",
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
       },
       {
         "title": "営業とカスタマーサクセス",
