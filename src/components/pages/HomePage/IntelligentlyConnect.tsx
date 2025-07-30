@@ -119,7 +119,7 @@ const IntelligentlyConnect: React.FC = () => {
       `}</style>
 
       {/* Header */}
-      <div className="max-w-5xl w-full  ml-[-15rem] mb-8">
+      <div className="max-w-5xl w-full ml-0 sm:ml-[-4rem] md:ml-[-15rem] mb-6 sm:mb-7 md:mb-8 px-4 sm:px-6 md:px-0">
         <h1
           className="text-[#3C3C3C] font-bold mb-4 text-left"
           style={{
@@ -131,10 +131,10 @@ const IntelligentlyConnect: React.FC = () => {
           {sectionTitle}
         </h1>
         <p
-          className="text-[#3C3C3C] font-semibold leading-normal w-[87%] mb-5 text-left "
+          className="text-[#3C3C3C] font-semibold leading-normal w-full sm:w-[95%] md:w-[87%] mb-4 sm:mb-5 md:mb-5 text-left"
           style={{
             fontFamily: "var(--font-source)",
-            fontSize: "clamp(1.8rem, 2vw, 2rem)",
+            fontSize: "clamp(1.1rem, 2vw, 2rem)",
           }}
         >
           {description}
@@ -156,15 +156,15 @@ const IntelligentlyConnect: React.FC = () => {
       />
 
       {/* Two-Column Section with Vertical Divider */}
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 pt-8 relative">
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-8 mt-4 sm:mt-6 md:mt-4 pt-8 sm:pt-10 md:pt-8 relative px-4 sm:px-6 md:px-0">
         {/* Top horizontal line - extends according to text positioning */}
         <div
-          className="absolute border border-[#d6d1c7] top-0 w-full h-px bg-[#d6d1c7]"
+          className="hidden md:block absolute border border-[#d6d1c7] top-0 w-full h-px bg-[#d6d1c7]"
           style={{ left: "-4rem", right: "-4rem", width: "calc(100% + 8rem)" }}
         ></div>
 
         {/* Left Card - moved more to the left with proper spacing */}
-        <div className="flex flex-col items-start text-left px-1 sm:px-2 z-10 -ml-8 md:-ml-16">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left px-2 sm:px-4 md:px-1 z-10 ml-0 sm:ml-0 md:-ml-16">
           <h2
             className="text-[#3C3C3C] mb-2"
             style={{
@@ -175,7 +175,7 @@ const IntelligentlyConnect: React.FC = () => {
             {translations.intelligentlyConnect.cards[0].title}
           </h2>
           <p
-            className="text-[#3C3C3C] font-semibold w-[95%] mb-4"
+            className="text-[#3C3C3C] font-semibold w-full sm:w-full md:w-[95%] mb-4 sm:mb-5 md:mb-4"
             style={{
               fontFamily: "var(--font-source)",
               fontSize: "clamp(1.4rem, 1.5vw, 1.15rem)",
@@ -185,7 +185,7 @@ const IntelligentlyConnect: React.FC = () => {
           </p>
           <div
             ref={leftImageRef}
-            className={`w-full flex mb-7 justify-center slide-in-left ${
+            className={`w-full flex mb-6 sm:mb-8 md:mb-7 justify-center slide-in-left ${
               leftImageVisible ? "visible" : ""
             }`}
           >
@@ -194,7 +194,7 @@ const IntelligentlyConnect: React.FC = () => {
               alt="Replace Single App"
               width={290}
               height={290}
-              className="object-contain rounded-lg mt-5 w-[20rem]"
+              className="object-contain rounded-lg mt-4 sm:mt-5 md:mt-5 w-[14rem] sm:w-[16rem] md:w-[20rem]"
             />
           </div>
         </div>
@@ -206,7 +206,7 @@ const IntelligentlyConnect: React.FC = () => {
         />
 
         {/* Right Card - moved more to the right */}
-        <div className="flex  flex-col items-start text-left px-1 sm:px-2 z-10 -mr-8 md:-mr-16 ml-10">
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left px-2 sm:px-4 md:px-1 z-10 mr-0 sm:mr-0 md:-mr-16 ml-0 sm:ml-0 md:ml-10">
           <h2
             className="text-[#3C3C3C] mb-2"
             style={{
@@ -217,7 +217,7 @@ const IntelligentlyConnect: React.FC = () => {
             {translations.intelligentlyConnect.cards[1].title}
           </h2>
           <p
-            className="text-[#3C3C3C] font-semibold w-[100%] mb-4"
+            className="text-[#3C3C3C] font-semibold w-full mb-4 sm:mb-5 md:mb-4"
             style={{
               fontFamily: "var(--font-source)",
               fontSize: "clamp(1.4rem, 1.5vw, 1.15rem)",
@@ -227,7 +227,7 @@ const IntelligentlyConnect: React.FC = () => {
           </p>
           <div
             ref={rightImageRef}
-            className={`w-full flex mb-7 justify-center slide-in-right ${
+            className={`w-full flex mb-6 sm:mb-8 md:mb-7 justify-center slide-in-right ${
               rightImageVisible ? "visible" : ""
             }`}
           >
@@ -236,13 +236,13 @@ const IntelligentlyConnect: React.FC = () => {
               alt="Automate the Rest"
               width={290}
               height={290}
-              className="object-contain rounded-lg mt-5 w-[20rem]"
+              className="object-contain rounded-lg mt-4 sm:mt-5 md:mt-5 w-[14rem] sm:w-[16rem] md:w-[20rem]"
             />
           </div>
         </div>
         {/* Bottom horizontal line - extends according to text positioning */}
         <div
-          className="absolute border border-[#d6d1c7] bottom-0 w-full h-px bg-[#d6d1c7]"
+          className="hidden md:block absolute border border-[#d6d1c7] bottom-0 w-full h-px bg-[#d6d1c7]"
           style={{ left: "-4rem", right: "-4rem", width: "calc(100% + 8rem)" }}
         ></div>
       </div>

@@ -6,6 +6,8 @@ import IntelligentlyConnect from "@/components/pages/HomePage/IntelligentlyConne
 import BusinessGrowth from "@/components/pages/HomePage/BusinessGrowth";
 import UniversalSearch from "@/components/pages/HomePage/UniversalSearch";
 import CompleteWorkflow from "@/components/pages/HomePage/CompleteWorkflow";
+import UnlimitedPoss from "@/components/pages/HomePage/UnlimitedPoss";
+
 
 const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
 
@@ -22,6 +24,7 @@ export default function Home() {
       <BusinessGrowth />
       <UniversalSearch />
       <CompleteWorkflow />
+      <UnlimitedPoss/>
       
     </main>
   );

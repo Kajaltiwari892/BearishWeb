@@ -52,16 +52,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
       <div
         className="relative z-20 flex flex-col justify-between min-h-full"
-        style={{ height: "calc(110vh - 80px)", minHeight: "calc(100vh - 80px)" }}
+        style={{
+          height: "calc(110vh - 80px)",
+          minHeight: "calc(100vh - 80px)",
+        }}
       >
         {/* Main content section */}
-        <div className="flex flex-col justify-center items-center text-center px-4 flex-grow">
-          <div className="w-[90%] max-w-none space-y-4">
+        <div className="flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-4 flex-grow">
+          <div className="w-[95%] sm:w-[90%] md:w-[90%] max-w-none space-y-3 sm:space-y-4 md:space-y-4">
             <h1
               className="text-[#F4F1EB] font-normal leading-tight mx-auto relative cursor-pointer"
               style={{
                 fontFamily: "Suez One",
-                fontSize:"4rem"
+                fontSize: "clamp(2rem, 8vw, 4rem)",
               }}
               onClick={() => setIsProductOpen(!isProductOpen)}
               ref={productRef}
@@ -69,23 +72,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {translations?.hero.title || title}
             </h1>
             <p
-              className="text-[#F4F1EB] font-normal leading-normal mx-auto w-[93%]"
+              className="text-[#F4F1EB] font-normal leading-normal mx-auto w-[95%] sm:w-[93%] md:w-[93%]"
               style={{
                 fontFamily: "var(--font-source)",
-                 fontSize:"2rem"
+                fontSize: "clamp(1.2rem, 4vw, 2rem)",
               }}
             >
               {translations?.hero.description || description}
             </p>
             <div className="pt-2">
               <button
-                className="inline-flex items-center justify-center px-6 py-2 bg-[#6B8E23] hover:bg-[#9bb26c] rounded-lg text-[#F0ECE7] border border-[#9D9388] transition-colors duration-200 cursor-pointer font-normal"
+                className="inline-flex items-center justify-center px-4 sm:px-6 md:px-6 py-2 bg-[#6B8E23] hover:bg-[#9bb26c] rounded-lg text-[#F0ECE7] border border-[#9D9388] transition-colors duration-200 cursor-pointer font-normal"
                 style={{
                   fontFamily: "Averia Serif Libre, serif",
                   borderWidth: "1.5px",
-                   fontSize: "clamp(0.875rem, 1.5vw, 1.25rem)",
-                
-                  minWidth: "clamp(240px, 30vw, 280px)",
+                  fontSize: "clamp(0.875rem, 1.5vw, 1.25rem)",
+                  minWidth: "clamp(200px, 30vw, 280px)",
                 }}
               >
                 {translations?.hero.cta || "Start in minutes. Save millions."}
@@ -94,8 +96,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
         {/* Trusted by the world's top teams */}
-        <div className="flex-shrink-0 px-4 pb-6 mt-8 md:mt-12">
-          <div className="w-[90%] max-w-none mx-auto">
+        <div className="flex-shrink-0 px-4 sm:px-6 md:px-4 pb-6 mt-6 sm:mt-8 md:mt-12">
+          <div className="w-[95%] sm:w-[90%] md:w-[90%] max-w-none mx-auto">
             <h3
               className="text-[#F4F1EB] font-normal mb-2"
               style={{
@@ -106,7 +108,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {translations?.hero.trusted || "Trusted by the world's top teams"}
             </h3>
             <p
-              className="text-[#F4F1EB] font-light mb-3 w-[44%] mt-4"
+              className="text-[#F4F1EB] font-light mb-3 w-[90%] sm:w-[70%] md:w-[44%] mt-4"
               style={{
                 fontFamily: "Averia Serif Libre, serif",
                 fontSize: "clamp(0.75rem, 1.5vw, 1.25rem)",
@@ -117,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
             {/* company logo */}
             <div
-              className="flex items-center md:justify-between justify-center flex-wrap gap-x-3 gap-y-2 opacity-80 mt-4 w-full overflow-visible"
+              className="flex items-center justify-center sm:justify-center md:justify-between flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-3 gap-y-2 opacity-80 mt-4 w-full overflow-visible"
               style={{
                 maxWidth: "100%",
               }}
