@@ -28,50 +28,50 @@ const IntelligentConnections: React.FC = () => {
 
   return (
     <section className="w-full bg-[#F8F7F4] py-16 px-4 flex flex-col items-center">
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="max-w-7xl w-full mx-auto">
         {/* Section Title */}
         <h2
-          className="text-center  text-[#3C3C3C] mb-12"
+          className="text-center text-[#3C3C3C] mb-12"
           style={{
-            fontFamily: "Averia Sans Libre, serif",
-            fontSize: "clamp(1.75rem, 4vw, 2.9rem)",
+            fontFamily: "Suez One",
+            fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
           }}
         >
           {sectionTitle}
         </h2>
 
-        {/* Cards Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mx-auto">
+        {/* Cards Container - Enhanced width and height */}
+        <div className="grid grid-cols-1 w-full md:grid-cols-3 gap-8 mx-auto">
           {translatedCards.map((card, index) => (
             <div
               key={index}
-              className="bg-[#F4F1EB] rounded-lg p-4 flex flex-col items-center text-center border border-[#b3a89a70]"
+              className="bg-[#F4F1EB] w-full rounded-lg p-8 flex flex-col items-center font-semibold text-center border border-[#b3a89a70] min-h-[480px] md:min-h-[520px]"
             >
               <h3
-                className="text-[#3C3C3C] mb-4 w-[80%]"
+                className="text-[#3C3C3C] mb-8 w-[80%]"
                 style={{
-                  fontFamily: "Averia Serif Libre",
+                  fontFamily: "var(--font-source)",
                   fontSize: "clamp(1.25rem, 2vw, 2.5rem)",
                 }}
               >
                 {card.title}
               </h3>
 
-              <div className="w-40 h-40 sm:w-48 sm:h-48 relative mb-6 rounded-lg flex items-center justify-center p-2">
+              <div className=" w-[15.625rem]  sm:w-70 sm:h-60 relative mb-10 rounded-lg flex items-center justify-center p-2">
                 <Image
                   src={imagePaths[index]}
                   alt={card.title}
-                  width={200}
-                  height={200}
-                  className="object-contain"
+                  width={360}
+                  height={260}
+                  className="object-contain "
                 />
               </div>
 
               <p
-                className="text-[#3C3C3C] w-[80%]"
+                className="text-[#3C3C3C] w-[80%] flex-grow flex items-center justify-center"
                 style={{
-                  fontFamily: "Averia Serif Libre",
-                  fontSize: "clamp(1rem, 1.5vw, 2rem)",
+                  fontFamily: "var(--font-source)",
+                  fontSize: "clamp(1rem, 1.5vw, 1.75rem)",
                 }}
               >
                 {card.description}
@@ -80,52 +80,50 @@ const IntelligentConnections: React.FC = () => {
           ))}
         </div>
 
-        {/* Productivity Agent Section - Similar to BEBA design */}
-        <div className="w-full bg-[#F4F1EB] mt-16 rounded-2xl border border-[#b3a89a68] p-6 md:p-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Productivity Agent Section - Enhanced and aligned with cards */}
+        <div className="w-full bg-[#F4F1EB] mt-16 rounded-2xl border border-[#b3a89a68] p-10 md:p-16 min-h-[320px] md:min-h-[380px]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 h-full">
             {/* Left side - Bear paw icon */}
             <div className="flex-shrink-0">
-              <div className="w-28  h-28 md:w-46 md:h-44 relative">
+              <div className="w-40 h-40 md:w-72 md:h-60 relative">
                 <Image
                   src="/images/IntelligentConnections/BearClaws.png"
                   alt="BEBA Productivity Agent"
-                  width={474}
-                  height={174}
-                  className="object-contain "
+                  width={600}
+                  height={220}
+                  className="object-contain"
                 />
               </div>
             </div>
 
             {/* Right side - Content */}
-            <div className="flex-1 text-center md:ml-10  md:text-left">
+            <div className="flex-1 text-center md:ml-16 md:text-left flex flex-col justify-center">
               <h2
-                className="text-[#3C3C3C] mb-3"
+                className="text-[#3C3C3C] mb-5"
                 style={{
                   fontFamily: "Suez One",
-                  fontSize: "clamp(1.4rem, 2.8vw, 2.5rem",
-                  lineHeight: "1.2",
+                  fontSize: "clamp(1.4rem, 2.8vw, 3rem)",
+                  lineHeight: "normal",
                 }}
               >
                 {bebaSectionTitle}
               </h2>
               <h3
-                className="text-[#3C3C3C] mb-4"
+                className="text-[#3C3C3C] mb-7"
                 style={{
                   fontFamily: "Suez One",
-                  fontSize: "clamp(1.1rem, 2.5vw, 2.5rem)",
-                  fontWeight: "normal",
-                  lineHeight: "1.3",
+                  fontSize: "clamp(1.1rem, 2.5vw, 3rem)",
+                  lineHeight: "normal",
                 }}
               >
                 {bebaSecSectionTitle}
               </h3>
               <p
-                className="text-[#3C3C3C] max-w-3xl"
+                className="text-[#3C3C3C] font-semibold max-w-5xl"
                 style={{
-                  fontFamily: "Averia Serif Libre",
-
-                  fontSize: "clamp(1.1rem, 1.6vw, 2.5rem)",
-                  lineHeight: "1.5",
+                  fontFamily: "var(--font-source)",
+                  fontSize: "clamp(1.1rem, 1.6vw, 1.5rem)",
+                  lineHeight: "normal",
                 }}
               >
                 {bebaDescription}

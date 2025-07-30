@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <div
       className="relative w-full overflow-hidden"
-      style={{ height: "103vh" }}
+      style={{ height: "110vh", minHeight: "100vh" }}
     >
       <div className="inset-0 z-0">
         <Image
@@ -51,16 +51,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <Navbar />
       </div>
       <div
-        className="relative z-20 flex flex-col"
-        style={{ height: "calc(100vh - 80px)" }}
+        className="relative z-20 flex flex-col justify-between min-h-full"
+        style={{ height: "calc(110vh - 80px)", minHeight: "calc(100vh - 80px)" }}
       >
-        <div className="flex flex-col justify-center items-center text-center px-4 mt-24">
+        {/* Main content section */}
+        <div className="flex flex-col justify-center items-center text-center px-4 flex-grow">
           <div className="w-[90%] max-w-none space-y-4">
             <h1
               className="text-[#F4F1EB] font-normal leading-tight mx-auto relative cursor-pointer"
               style={{
                 fontFamily: "Suez One",
-                fontSize: "clamp(1.5rem, 4vw, 3.75rem)",
+                fontSize:"4rem"
               }}
               onClick={() => setIsProductOpen(!isProductOpen)}
               ref={productRef}
@@ -68,10 +69,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {translations?.hero.title || title}
             </h1>
             <p
-              className="text-[#F4F1EB] font-normal leading-normal mx-auto w-[85%]"
+              className="text-[#F4F1EB] font-normal leading-normal mx-auto w-[93%]"
               style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontSize: "clamp(0.875rem, 2vw, 1.5rem)",
+                fontFamily: "var(--font-source)",
+                 fontSize:"2rem"
               }}
             >
               {translations?.hero.description || description}
@@ -82,7 +83,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 style={{
                   fontFamily: "Averia Serif Libre, serif",
                   borderWidth: "1.5px",
-                  fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
+                   fontSize: "clamp(0.875rem, 1.5vw, 1.25rem)",
+                
                   minWidth: "clamp(240px, 30vw, 280px)",
                 }}
               >
@@ -92,22 +94,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
         {/* Trusted by the world's top teams */}
-        <div className="flex-shrink-0 px-4 pb-4 mt-48">
+        <div className="flex-shrink-0 px-4 pb-6 mt-8 md:mt-12">
           <div className="w-[90%] max-w-none mx-auto">
             <h3
               className="text-[#F4F1EB] font-normal mb-2"
               style={{
                 fontFamily: "Suez One",
-                fontSize: "clamp(1rem, 2.5vw, 1.625rem)",
+                fontSize: "clamp(1rem, 2.5vw, 2rem)",
               }}
             >
               {translations?.hero.trusted || "Trusted by the world's top teams"}
             </h3>
             <p
-              className="text-[#F4F1EB] font-light mb-3 w-[50%] mt-4"
+              className="text-[#F4F1EB] font-light mb-3 w-[44%] mt-4"
               style={{
                 fontFamily: "Averia Serif Libre, serif",
-                fontSize: "clamp(0.75rem, 1.5vw, 1.125rem)",
+                fontSize: "clamp(0.75rem, 1.5vw, 1.25rem)",
               }}
             >
               {translations?.hero.trustedDescription ||
@@ -115,7 +117,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
             {/* company logo */}
             <div
-              className="flex items-center md:justify-between justify-center flex-wrap gap-x-3 gap-y-2 opacity-80 mt-4 w-full"
+              className="flex items-center md:justify-between justify-center flex-wrap gap-x-3 gap-y-2 opacity-80 mt-4 w-full overflow-visible"
               style={{
                 maxWidth: "100%",
               }}

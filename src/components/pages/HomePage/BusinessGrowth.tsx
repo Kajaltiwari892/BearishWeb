@@ -76,7 +76,7 @@ const getBusinessGrowthData = (translations: BusinessGrowthTranslations): Record
   };
 
   const colors = {
-    "relationship-intelligence": "text-[#7B8C9F]",
+    "relationship-intelligence": "text-[#4D7985]",
     "project-orchestration": "text-[#C96F53]",
     "streamline-communications": "text-[#8368A5]",
     "growth-analytics": "text-[#6B8E23]",
@@ -182,17 +182,18 @@ export default function BusinessGrowth() {
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-[#F4F1EB] to-[#E4DBC8]">
-      <div className="max-w-7xl mx-auto">
-        {/* Title */}
+      <div className="max-w-8xl mx-auto">
+        {/* Title - moved more to the left */}
         <motion.div
-          className="mb-10 ml-0 lg:ml-18"
+          className="mb-10 ml-0 lg:ml-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#23272E] mb-8 text-center sm:text-left leading-tight"
-            style={{ fontFamily: "Suez One" }}
+            className="font-normal text-[#23272E] mb-8 text-center sm:text-left leading-tight"
+            
+            style={{ fontFamily: "Suez One" , fontSize: "clamp(1.5rem, 3vw, 3rem)", }}
           >
             {translations.businessGrowth.sectionTitle.split('\n').map((line, index) => (
               <span key={index}>
@@ -204,10 +205,10 @@ export default function BusinessGrowth() {
         </motion.div>
 
         {/* Main Content - Tabs and Image */}
-        <div className="flex flex-col lg:flex-row gap-12 items-start mb-12">
-          {/* Left Side - Tabs */}
+        <div className="flex flex-col lg:flex-row gap-20 items-start mb-12">
+          {/* Left Side - Tabs moved more to the left */}
           <motion.div
-            className="flex-shrink-0 w-full lg:w-80 ml-0 lg:ml-20"
+            className="flex-shrink-0 w-full lg:w-80 ml-0 lg:ml-16"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -224,7 +225,7 @@ export default function BusinessGrowth() {
                     onClick={() => handleTabClick(tab.id)}
                     className={`cursor-pointer flex items-center gap-2 text-sm whitespace-nowrap transition-all duration-200 px-3 py-2 rounded-lg border flex-shrink-0 ${
                       activeTab === tab.id
-                        ? `${current.tabColor} opacity-100 bg-white shadow-sm border-current`
+                        ? `${current.tabColor} opacity-100 bg-white  border-current`
                         : "text-[#B3A89A] opacity-60 hover:opacity-80 border-[#B3A89A] bg-white/50"
                     }`}
                     whileHover={{ scale: 1.02 }}
@@ -264,9 +265,9 @@ export default function BusinessGrowth() {
                 <motion.button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`cursor-pointer flex items-center gap-3 text-left text-2xl transition-all duration-200 p-3 w-[114%] rounded-lg ${
+                  className={`cursor-pointer flex items-center gap-3 text-left text-2xl transition-all duration-200 p-3 w-[114%] text-[1.775rem] rounded-lg ${
                     activeTab === tab.id
-                      ? `${current.tabColor} opacity-100 shadow-sm`
+                      ? `text-[#3C3C3C] opacity-100 `
                       : "text-[#B3A89A] opacity-45 hover:opacity-75"
                   }`}
                   style={{ letterSpacing: "0.01em" }}
@@ -298,9 +299,9 @@ export default function BusinessGrowth() {
             </div>
           </motion.div>
 
-          {/* Right Side - Screenshot with AnimatePresence */}
+          {/* Right Side - Enhanced Screenshot with appropriate size parallel to cards */}
           <div className="flex-1 w-full flex justify-center lg:justify-start">
-            <div className="overflow-hidden w-full sm:w-auto lg:w-179 lg:h-auto  lg:ml-16 lg:-mt-30">
+            <div className="overflow-hidden w-full sm:w-auto lg:w-[810px] lg:h-auto lg:ml-12 lg:-mt-30">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -312,9 +313,9 @@ export default function BusinessGrowth() {
                   <Image
                     src={current.screenshot}
                     alt="Business Growth Screenshot"
-                    width={600}
-                    height={600}
-                    className="w-full  h-auto object-cover"
+                    width={800}
+                    height={800}
+                    className="w-full h-auto object-cover"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -322,12 +323,12 @@ export default function BusinessGrowth() {
           </div>
         </div>
 
-        {/* Cards Section with staggered animation */}
-        <motion.div className="ml-0 lg:ml-20">
+        {/* Cards Section - aligned with upper left content */}
+        <motion.div className="ml-0 lg:ml-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              className="flex flex-col sm:flex-row sm:flex-wrap gap-2 lg:gap-2"
+              className="flex flex-col sm:flex-row sm:flex-wrap gap-4 lg:gap-6"
               variants={cardContainerVariants}
               initial="initial"
               animate="animate"
@@ -335,26 +336,22 @@ export default function BusinessGrowth() {
               {current.cards.map((card: FeatureCard, idx: number) => (
                 <motion.div
                   key={`${activeTab}-${idx}`}
-                  className="flex flex-col w-full sm:w-[48%] md:w-[42%] lg:w-[31%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-3 hover:shadow-lg transition-shadow duration-300 mr-0 sm:mr-2 mb-2"
+                  className="flex flex-col w-full sm:w-[48%] md:w-[45%] lg:w-[30%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-4 duration-300 mr-0 sm:mr-2 mb-2"
                   variants={cardVariants}
-                  whileHover={{
-                    scale: 1.02,
-                    y: -2,
-                    transition: { duration: 0.2 },
-                  }}
+                 
                   whileTap={{ scale: 0.98 }}
                 >
                   {/* Icon and Title in one line */}
-                  <div className="flex items-center gap-2.5 mb-2.5">
+                  <div className="flex items-center gap-3 mb-3">
                     <motion.div
                       className="flex-shrink-0"
                       whileHover={{ rotate: [0, -10, 10, 0] }}
                       transition={{ duration: 0.3 }}
                     >
-                      <img src={card.icon} alt="icon" className="w-7 h-7" />
+                      <img src={card.icon} alt="icon" className="w-8 h-8" />
                     </motion.div>
                     <h3
-                      className={`text-[1.2rem] ${card.color}`}
+                      className={`text-[1.3rem] ${card.color}`}
                       style={{ fontFamily: "Suez One" }}
                     >
                       {card.title}
@@ -363,8 +360,8 @@ export default function BusinessGrowth() {
                   {/* Description below */}
                   <div>
                     <p
-                      className={`${card.color} w-[95%] text-[1.1rem] leading-relaxed`}
-                      style={{ fontFamily: "Averia Serif Libre" }}
+                      className={`${card.color} w-[95%] text-[1.15rem] leading-relaxed`}
+                      style={{ fontFamily: "var(--font-source)" }}
                     >
                       {card.description}
                     </p>

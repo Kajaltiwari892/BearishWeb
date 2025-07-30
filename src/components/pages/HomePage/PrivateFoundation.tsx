@@ -13,14 +13,17 @@ const PrivateFoundation: React.FC = () => {
   return (
     <section className="w-full px-4 sm:px-6 py-8 sm:py-12 md:py-20 flex flex-col md:flex-row items-start gap-6 sm:gap-8 md:gap-10 bg-[#F8F7F4]">
       {/* Left Content */}
-      <div className="flex-1 max-w-full md:pl-8 lg:pl-12 xl:pl-20">
+      <div className="flex-1 max-w-full md:pl-6 lg:pl-12">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl max-w-xl font-extrabold text-[#3C3C3C] mb-4 sm:mb-6 leading-tight md:ml-4 lg:ml-8"
-          style={{ fontFamily: "Suez One" }}
+          className="max-w-xl font-normal text-[#3C3C3C] mb-4 leading-normal"
+          style={{
+            fontFamily: "Suez One",
+            fontSize: "clamp(2rem, 4vw, 3.75rem)",
+          }}
         >
           {translations.privateFoundation.heading}
         </motion.h2>
@@ -30,14 +33,14 @@ const PrivateFoundation: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-[#3C3C3C] font-light w-full sm:w-[95%] md:w-[90%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 sm:mb-8 md:mb-10 leading-normal md:ml-4 lg:ml-8 "
+          className="text-[#3C3C3C] mt-13 font-light w-full sm:w-[95%] md:w-[88%] text-base sm:text-lg md:text-xl lg:text-[1.75rem] mb-6 leading-normal"
           style={{ fontFamily: "var(--font-source)" }}
         >
           {translations.privateFoundation.paragraph}
         </motion.p>
 
         {/* Features */}
-        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full md:w-[120%] mb-8 sm:mb-10 md:mb-12 text-[#3C3C3C]  md:ml-4 lg:ml-8">
+        <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full mb-8 sm:mb-10 md:mb-12 text-[#3C3C3C]">
           {translations.privateFoundation.features.map((feature, index) => (
             <motion.div
               key={index}
@@ -49,16 +52,16 @@ const PrivateFoundation: React.FC = () => {
                 ease: "easeOut",
                 delay: 0.4 + index * 0.1,
               }}
-              className="flex flex-col sm:flex-row gap-2 sm:gap-6 md:gap-10 items-start"
+              className="flex flex-col sm:flex-row mt-10 gap-2 sm:gap-6 md:gap-10 items-start"
             >
               <h3
-                className="font-bold text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]"
+                className="font-[600]  text-[#3C3C3C] text-lg sm:text-xl md:text-[1.5rem] sm:min-w-[200px] md:min-w-[240px]"
                 style={{ fontFamily: "var(--font-source)" }}
               >
                 {feature.title}
               </h3>
               <p
-                className="leading-normal w-[410px] sm:max-w-md  text-[#3C3C3C]  text-base sm:text-lg md:text-[1.5rem] md:ml-[4rem]"
+                className="leading-normal w-[410px] sm:max-w-md text-[#3C3C3C] text-base  ml-25 sm:text-lg md:text-[1.5rem]"
                 style={{ fontFamily: "var(--font-source)" }}
               >
                 {feature.description}
@@ -73,7 +76,7 @@ const PrivateFoundation: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-          className="flex gap-4 mb-6 md:ml-4 lg:ml-8"
+          className="flex gap-7 mb-6"
         >
           {[
             {
@@ -103,14 +106,14 @@ const PrivateFoundation: React.FC = () => {
                 ease: "easeOut",
                 delay: 0.9 + index * 0.1,
               }}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-start justify-center"
             >
               <Image
                 src={icon.src}
                 alt={icon.alt}
-                width={148}
+                width={248}
                 height={148}
-                className="w-[9.25rem] h-[9.25rem] object-contain"
+                className="object-contain w-[10.25rem] h-[10.25rem] "
               />
             </motion.div>
           ))}
@@ -122,30 +125,24 @@ const PrivateFoundation: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.3 }}
-          className="text-sm sm:text-base md:text-[1rem] text-[#3C3C3C]  max-w-3xl leading-normal md:ml-4 lg:ml-8"
+          className="text-sm sm:text-base md:text-[1rem] text-[#3C3C3C] max-w-3xl leading-normal"
           style={{ fontFamily: "var(--font-source)" }}
         >
           {translations.privateFoundation.footerNote
             .split("{0}")
-            .map((part, index) => (
-              <React.Fragment key={index}>
+            .map((part, idx) => (
+              <React.Fragment key={idx}>
                 {part}
-                {index === 0 && (
-                  <Link
-                    href="#"
-                    className="text-[#4d7985] hover:text-[#386a7b]"
-                  >
+                {idx === 0 && (
+                  <Link href="#" className="text-[#4d7985] hover:text-[#386a7b]">
                     {translations.privateFoundation.footerLinks[0]}
                   </Link>
                 )}
-                {index === 1 && (
+                {idx === 1 && (
                   <>
                     {" "}
                     and{" "}
-                    <Link
-                      href="#"
-                      className="text-[#4d7985] hover:text-[#386a7b]"
-                    >
+                    <Link href="#" className="text-[#4d7985] hover:text-[#386a7b]">
                       {translations.privateFoundation.footerLinks[1]}
                     </Link>
                   </>
@@ -157,7 +154,7 @@ const PrivateFoundation: React.FC = () => {
       </div>
 
       {/* Right Image with Animation */}
-      <div className="flex-1 max-w-full sm:max-w-md md:max-w-lg lg:max-w-2xl items-center justify-center flex mt-6 md:mt-0">
+      <div className="flex-1 max-w-full sm:max-w-md md:max-w-lg lg:max-w-2xl mr-10 flex items-start justify-end">
         <motion.div
           initial={{ opacity: 0, x: 80, scale: 0.9 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -167,18 +164,19 @@ const PrivateFoundation: React.FC = () => {
             ease: [0.25, 0.46, 0.45, 0.94],
             delay: 0.3,
           }}
-          className="w-full max-w-[410px] relative"
+          className="w-full max-w-[460px] relative"
         >
           <Image
             src="/images/PrivateFoundation/verticalImg.png"
             alt="Secure Private Foundation"
             width={410}
             height={1104}
-            className="rounded-3xl w-full h-[69rem]"
+            className="rounded-3xl w-full h-[81rem] object-top"
           />
         </motion.div>
       </div>
     </section>
   );
 };
+
 export default PrivateFoundation;

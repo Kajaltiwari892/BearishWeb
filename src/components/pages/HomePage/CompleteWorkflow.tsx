@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "@/lib/i18n";
 
@@ -16,6 +16,8 @@ const CompleteWorkflow: React.FC = () => {
   const [chunkSize, setChunkSize] = useState(3);
   const groups = chunkArray(cards, chunkSize);
   const [current, setCurrent] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isScrollingRef = useRef(false);
 
   function chunkArray<T>(arr: T[], size: number): T[][] {
     const chunks: T[][] = [];
@@ -25,8 +27,10 @@ const CompleteWorkflow: React.FC = () => {
     return chunks;
   }
 
-  const prev = () => setCurrent((c) => Math.max(0, c - 1));
-  const next = () => setCurrent((c) => Math.min(groups.length - 1, c + 1));
+  const goToSlide = (index: number) => {
+    const newIndex = Math.max(0, Math.min(groups.length - 1, index));
+    setCurrent(newIndex);
+  };
 
   React.useEffect(() => {
     function updateChunkSize() {
@@ -43,6 +47,111 @@ const CompleteWorkflow: React.FC = () => {
     window.addEventListener("resize", updateChunkSize);
     return () => window.removeEventListener("resize", updateChunkSize);
   }, []);
+
+  // Handle wheel scroll
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const deltaX = Math.abs(e.deltaX);
+      const deltaY = Math.abs(e.deltaY);
+      
+      // Only handle horizontal scrolling or when horizontal movement is dominant
+      // Allow vertical scrolling to pass through normally
+      const isHorizontalScroll = deltaX > deltaY || deltaX > 20;
+      
+      if (!isHorizontalScroll) {
+        // This is vertical scrolling, let it pass through normally
+        return;
+      }
+      
+      // Prevent default only for horizontal scrolling
+      e.preventDefault();
+      
+      // Debounce rapid scroll events
+      if (isScrollingRef.current) return;
+      isScrollingRef.current = true;
+
+      // Use deltaX for horizontal scroll, fallback to deltaY if needed
+      const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
+      
+      if (Math.abs(delta) > 10) { // Minimum threshold for scroll sensitivity
+        if (delta > 0) {
+          // Scroll right (next slide)
+          goToSlide(current + 1);
+        } else {
+          // Scroll left (previous slide)
+          goToSlide(current - 1);
+        }
+      }
+
+      // Reset debounce after a short delay
+      setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 150);
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, [current, groups.length]);
+
+  // Handle touch events for mobile swipe
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const diffX = startX - currentX;
+      const diffY = startY - currentY;
+
+      // Only handle horizontal swipes (ignore vertical scrolling)
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        e.preventDefault();
+        
+        if (diffX > 0) {
+          // Swipe left (next slide)
+          goToSlide(current + 1);
+        } else {
+          // Swipe right (previous slide)
+          goToSlide(current - 1);
+        }
+        
+        isDragging = false;
+      }
+    };
+
+    const handleTouchEnd = () => {
+      isDragging = false;
+    };
+
+    container.addEventListener('touchstart', handleTouchStart, { passive: true });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [current, groups.length]);
 
   const slideVariants = {
     animate: (index: number) => ({ x: `-${index * 100}%` }),
@@ -61,7 +170,7 @@ const CompleteWorkflow: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto text-[#2B2B2B]">
         <h2
-          className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-12 text-[#3C3C3C] text-left"
+          className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-12 text-[#3C3C3C] text-left leading-normal"
           style={{ fontFamily: "Suez One" }}
         >
           {t?.completeWorkflow?.sectionTitle
@@ -75,9 +184,9 @@ const CompleteWorkflow: React.FC = () => {
         </h2>
 
         {/* Slider container */}
-        <div className="relative">
+        <div className="relative" ref={containerRef}>
           {/* Cards viewport */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing">
             <motion.div
               className="flex"
               custom={current}
@@ -130,31 +239,23 @@ const CompleteWorkflow: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Prev/Next buttons */}
-          <button
-            onClick={prev}
-            disabled={current === 0}
-            className="absolute left-2 sm:left-[-30px] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {t?.completeWorkflow?.prevButton}
-          </button>
-          <button
-            onClick={next}
-            disabled={current === groups.length - 1}
-            className="absolute right-2 sm:right-[-30px] cursor-pointer top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {t?.completeWorkflow?.nextButton}
-          </button>
-        </div>
-
-        {/* Navigation hint */}
-        <div className="text-center mt-4">
-          <p
-            className="text-sm text-[white]/60"
-            style={{ fontFamily: "var(--font-source)" }}
-          >
-            {t?.completeWorkflow?.navigationHint}
-          </p>
+          {/* Pagination dots */}
+          <div className="flex justify-center mt-6 gap-2">
+            {groups.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`
+                  w-2 h-2 rounded-full transition-all duration-200
+                  ${current === index 
+                    ? 'bg-white scale-110' 
+                    : 'bg-white/40 hover:bg-white/60'
+                  }
+                `}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
