@@ -7,6 +7,7 @@ import BusinessGrowth from "@/components/pages/HomePage/BusinessGrowth";
 import UniversalSearch from "@/components/pages/HomePage/UniversalSearch";
 import CompleteWorkflow from "@/components/pages/HomePage/CompleteWorkflow";
 import UnlimitedPoss from "@/components/pages/HomePage/UnlimitedPoss";
+import FooterMenu from "@/components/layout/FooterMenu";
 
 
 const locales = ['en', 'ja', 'ar', 'es', 'it', 'fr', 'ko'];
@@ -25,6 +26,7 @@ export default function Home() {
       <UniversalSearch />
       <CompleteWorkflow />
       <UnlimitedPoss/>
+      <FooterMenu/>
       
     </main>
   );
