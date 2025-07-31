@@ -11,7 +11,7 @@ const UnlimitedPoss: React.FC = () => {
   }
 
   return (
-    <section className="relative w-full h-auto md:h-screen overflow-hidden">
+    <section className="relative w-full cursor-default h-auto md:h-screen overflow-hidden">
       {/* Background */}
       <Image
         src="/images/others/BearishUnliPoss.png"
@@ -64,11 +64,11 @@ const UnlimitedPoss: React.FC = () => {
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <div className="mt-6 flex flex-col  sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
           <button
             className="
               bg-[#6B8E23] hover:bg-[#a4be6e]
-              text-white font-medium
+              text-white font-medium cursor-pointer
               py-2 px-4 sm:px-6
               rounded-lg border border-[#B3A89A]
               transition
@@ -82,7 +82,7 @@ const UnlimitedPoss: React.FC = () => {
           </button>
           <button
             className="
-              bg-[#E0D8CF] border border-[#B3A89A] hover:bg-[#f1f0ef]
+              bg-[#E0D8CF] cursor-pointer border border-[#B3A89A] hover:bg-[#f1f0ef]
               text-gray-900 font-medium
               py-2 px-4 sm:px-6
               rounded-lg transition

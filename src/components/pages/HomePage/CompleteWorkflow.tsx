@@ -158,7 +158,9 @@ const CompleteWorkflow: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative cursor-default w-full py-16 px-4 sm:px-6 lg:px-8"
+    >
       {/* Background + overlay */}
       <Image
         src="/images/CompleteWorkflow/workflowBackgroundImg.png"
@@ -185,7 +187,7 @@ const CompleteWorkflow: React.FC = () => {
         {/* Slider container */}
         <div className="relative" ref={containerRef}>
           {/* Cards viewport */}
-          <div className="overflow-hidden cursor-grab active:cursor-grabbing">
+          <div className="overflow-hidden ">
             <motion.div
               className="flex"
               custom={current}
@@ -246,9 +248,10 @@ const CompleteWorkflow: React.FC = () => {
                 onClick={() => goToSlide(index)}
                 className={`
                   w-2 h-2 rounded-full transition-all duration-200
-                  ${current === index 
-                    ? 'bg-white scale-110' 
-                    : 'bg-white/40 hover:bg-white/60'
+                  ${
+                    current === index
+                      ? "bg-white scale-110"
+                      : "bg-white/40 hover:bg-white/60"
                   }
                 `}
                 aria-label={`Go to slide ${index + 1}`}

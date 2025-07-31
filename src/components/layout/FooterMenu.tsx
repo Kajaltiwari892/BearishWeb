@@ -63,7 +63,7 @@ const FooterMenu: React.FC = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-center relative overflow-x-auto"
+      className="w-full min-h-screen cursor-default bg-cover bg-center relative overflow-x-auto"
       style={{ backgroundImage: "url('/images/others/Frozen Mountains.png')" }}
     >
       {/* Main Content Container */}
