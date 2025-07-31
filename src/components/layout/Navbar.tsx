@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               {/* Product */}
               <div
                 ref={productRef}
-                className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
+                className="flex items-center text-lg xl:text-[1.25rem] font-suez  cursor-pointer whitespace-nowrap"
                 onMouseEnter={handleProductHover}
                 onMouseLeave={handleProductLeave}
                 style={{ fontFamily: "Suez one" }}
@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 
               {/* Solutions */}
               <div
-                className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
+                className="flex items-center text-lg xl:text-[1.25rem] font-suez cursor-pointer whitespace-nowrap"
                 onClick={() => toggleDropdown("Solutions")}
                 style={{ fontFamily: "Suez one" }}
               >
@@ -129,7 +129,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
               {/* Pricing */}
               <Link
                 href="/pricing"
-                className="text-[var(--bearish-colors-warm-off-white-light)] text-lg xl:text-[20px] font-suez leading-normal whitespace-nowrap"
+                className="text-[var(--bearish-colors-warm-off-white-light)] text-lg xl:text-[1.25rem] font-suez leading-normal whitespace-nowrap"
                 style={{ fontFamily: "Suez one" }}
               >
                 {translations.nav.pricing}
@@ -137,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 
               {/* Resources */}
               <div
-                className="flex items-center text-lg xl:text-[20px] font-suez cursor-pointer whitespace-nowrap"
+                className="flex items-center text-lg xl:text-[1.25rem] font-suez cursor-pointer whitespace-nowrap"
                 onClick={() => toggleDropdown("Resources")}
                 style={{ fontFamily: "Suez one" }}
               >

@@ -119,7 +119,7 @@ const IntelligentlyConnect: React.FC = () => {
       `}</style>
 
       {/* Header */}
-      <div className="max-w-5xl w-full ml-0 sm:ml-[-4rem] md:ml-[-15rem] mb-6 sm:mb-7 md:mb-8 px-4 sm:px-6 md:px-0">
+      <div className="max-w-5xl w-full cursor-default ml-0 sm:ml-[-4rem] md:ml-[-15rem] mb-6 sm:mb-7 md:mb-8 px-4 sm:px-6 md:px-0">
         <h1
           className="text-[#3C3C3C] font-bold mb-4 text-left"
           style={{
@@ -156,7 +156,9 @@ const IntelligentlyConnect: React.FC = () => {
       />
 
       {/* Two-Column Section with Vertical Divider */}
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-8 mt-4 sm:mt-6 md:mt-4 pt-8 sm:pt-10 md:pt-8 relative px-4 sm:px-6 md:px-0">
+      <div
+        className="w-full cursor-default max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-8 mt-4 sm:mt-6 md:mt-4 pt-8 sm:pt-10 md:pt-8 relative px-4 sm:px-6 md:px-0"
+      >
         {/* Top horizontal line - extends according to text positioning */}
         <div
           className="hidden md:block absolute border border-[#d6d1c7] top-0 w-full h-px bg-[#d6d1c7]"

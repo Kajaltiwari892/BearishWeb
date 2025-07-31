@@ -166,7 +166,6 @@ const CompleteWorkflow: React.FC = () => {
         fill
         className="absolute inset-0 object-cover z-0"
       />
-      <div className="absolute inset-0 bg-black opacity-20 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-[#2B2B2B]">
         <h2

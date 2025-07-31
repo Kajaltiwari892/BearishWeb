@@ -11,7 +11,9 @@ const PrivateFoundation: React.FC = () => {
   if (!translations) return null;
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-4 py-8 sm:py-12 lg:py-20 flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-10 bg-[#F8F7F4]">
+    <section
+      className="w-full px-4 sm:px-6 cursor-default lg:px-4 py-8 sm:py-12 lg:py-20 flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-10 bg-[#F8F7F4]"
+    >
       {/* Left Content */}
       <div className="flex-1 max-w-full lg:pl-12 px-2 sm:px-4 lg:px-0">
         <motion.h2
@@ -134,7 +136,10 @@ const PrivateFoundation: React.FC = () => {
               <React.Fragment key={idx}>
                 {part}
                 {idx === 0 && (
-                  <Link href="#" className="text-[#4d7985] hover:text-[#386a7b]">
+                  <Link
+                    href="#"
+                    className="text-[#4d7985] hover:text-[#386a7b]"
+                  >
                     {translations.privateFoundation.footerLinks[0]}
                   </Link>
                 )}
@@ -142,7 +147,10 @@ const PrivateFoundation: React.FC = () => {
                   <>
                     {" "}
                     and{" "}
-                    <Link href="#" className="text-[#4d7985] hover:text-[#386a7b]">
+                    <Link
+                      href="#"
+                      className="text-[#4d7985] hover:text-[#386a7b]"
+                    >
                       {translations.privateFoundation.footerLinks[1]}
                     </Link>
                   </>

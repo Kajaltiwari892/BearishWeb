@@ -15,7 +15,9 @@ const UniversalSearch: React.FC = () => {
 
   return (
     <>
-      <section className="w-full bg-[#F8F7F4] py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-10 flex flex-col-reverse lg:flex-row items-center lg:items-start justify-center gap-6 sm:gap-8 lg:gap-10">
+      <section
+        className="w-full cursor-default bg-[#F8F7F4] py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-10 flex flex-col-reverse lg:flex-row items-center lg:items-start justify-center gap-6 sm:gap-8 lg:gap-10"
+      >
         {/* Text Content - moved slightly to the left */}
         <div className="w-full lg:w-1/2 mt-4 sm:mt-6 lg:mt-7 lg:ml-4 xl:ml-8 px-2 sm:px-4 lg:px-0">
           <h2

@@ -181,7 +181,9 @@ export default function BusinessGrowth() {
   };
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-4 bg-gradient-to-b from-[#F4F1EB] to-[#E4DBC8]">
+    <section
+      className="py-8 sm:py-12 cursor-default lg:py-16 px-4 sm:px-6 lg:px-4 bg-gradient-to-b from-[#F4F1EB] to-[#E4DBC8]"
+    >
       <div className="max-w-8xl mx-auto">
         {/* Title - moved more to the left */}
         <motion.div
@@ -192,15 +194,22 @@ export default function BusinessGrowth() {
         >
           <h2
             className="font-normal text-[#23272E] mb-6 sm:mb-8 lg:mb-8 text-center sm:text-center lg:text-left leading-tight"
-            
-            style={{ fontFamily: "Suez One" , fontSize: "clamp(1.5rem, 3vw, 3rem)", }}
+            style={{
+              fontFamily: "Suez One",
+              fontSize: "clamp(1.5rem, 3vw, 3rem)",
+            }}
           >
-            {translations.businessGrowth.sectionTitle.split('\n').map((line, index) => (
-              <span key={index}>
-                {line}
-                {index < translations.businessGrowth.sectionTitle.split('\n').length - 1 && <br />}
-              </span>
-            ))}
+            {translations.businessGrowth.sectionTitle
+              .split("\n")
+              .map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index <
+                    translations.businessGrowth.sectionTitle.split("\n")
+                      .length -
+                      1 && <br />}
+                </span>
+              ))}
           </h2>
         </motion.div>
 
@@ -338,7 +347,6 @@ export default function BusinessGrowth() {
                   key={`${activeTab}-${idx}`}
                   className="flex flex-col w-full sm:w-[48%] md:w-[45%] lg:w-[30%] border border-[#B3A89A] items-start bg-[#F4F1EB] rounded-lg p-4 sm:p-5 lg:p-4 duration-300 mr-0 sm:mr-2 mb-2"
                   variants={cardVariants}
-                 
                   whileTap={{ scale: 0.98 }}
                 >
                   {/* Icon and Title in one line */}
@@ -348,7 +356,11 @@ export default function BusinessGrowth() {
                       whileHover={{ rotate: [0, -10, 10, 0] }}
                       transition={{ duration: 0.3 }}
                     >
-                      <img src={card.icon} alt="icon" className="w-7 h-7 sm:w-8 sm:h-8 lg:w-8 lg:h-8" />
+                      <img
+                        src={card.icon}
+                        alt="icon"
+                        className="w-7 h-7 sm:w-8 sm:h-8 lg:w-8 lg:h-8"
+                      />
                     </motion.div>
                     <h3
                       className={`text-[1.1rem] sm:text-[1.2rem] lg:text-[1.3rem] ${card.color}`}

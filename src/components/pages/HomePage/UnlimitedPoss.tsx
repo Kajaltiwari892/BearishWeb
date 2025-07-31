@@ -21,9 +21,6 @@ const UnlimitedPoss: React.FC = () => {
         priority
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0000002b] pointer-events-none" />
-
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center text-[#F8F7F4] px-4 py-12 sm:py-16 md:py-20 min-h-[80vh] md:min-h-screen">
         <h1
@@ -40,31 +37,31 @@ const UnlimitedPoss: React.FC = () => {
           {t.unlimitedPoss?.titleLine2 || ""}
         </h1>
 
-          <p
-            className="
+        <p
+          className="
               mt-4
               text-lg        /* mobile */
               sm:text-xl     /* tablet */
               md:text-[2rem] /* desktop unchanged */
               font-bold
             "
-            style={{ fontFamily: "var(--font-source)" }}
-          >
-            {t.unlimitedPoss?.pricingInfo || ""}
-          </p>
+          style={{ fontFamily: "var(--font-source)" }}
+        >
+          {t.unlimitedPoss?.pricingInfo || ""}
+        </p>
 
-          <p
-            className="
+        <p
+          className="
               mt-2 italic
               text-base      /* mobile */
               sm:text-lg     /* tablet */
               md:text-[1.25rem] /* desktop unchanged */
               max-w-xl
             "
-            style={{ fontFamily: "var(--font-source)" }}
-          >
-            {t.unlimitedPoss?.pricingCalculatorInfo || ""}
-          </p>
+          style={{ fontFamily: "var(--font-source)" }}
+        >
+          {t.unlimitedPoss?.pricingCalculatorInfo || ""}
+        </p>
 
         {/* Buttons */}
         <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
@@ -104,4 +101,3 @@ const UnlimitedPoss: React.FC = () => {
 };
 
 export default UnlimitedPoss;
-

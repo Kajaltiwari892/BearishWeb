@@ -27,7 +27,10 @@ const IntelligentConnections: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#F8F7F4] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-4 flex flex-col items-center">
+    <section
+      className="w-full bg-[#F8F7F4] py-8 cursor-default
+ sm:py-12 md:py-16 px-4 sm:px-6 md:px-4 flex flex-col items-center"
+    >
       <div className="max-w-7xl w-full mx-auto">
         {/* Section Title */}
         <h2
