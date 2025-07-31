@@ -7,7 +7,7 @@ const UnlimitedPoss: React.FC = () => {
   const t = useTranslations();
 
   if (!t) {
-    return null; // or a loading state
+    return null; 
   }
 
   return (
@@ -56,7 +56,9 @@ const UnlimitedPoss: React.FC = () => {
               text-base      /* mobile */
               sm:text-lg     /* tablet */
               md:text-[1.25rem] /* desktop unchanged */
-              max-w-xl
+              max-w-xl 
+              font-bold
+             
             "
           style={{ fontFamily: "var(--font-source)" }}
         >
