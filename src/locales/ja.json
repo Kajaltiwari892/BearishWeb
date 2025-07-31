@@ -178,5 +178,14 @@
     "navigationHint": "矢印を使って、さらに多くのソリューションを見る →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "無限の可能性",
+    "titleLine1": "ひとつのOS。",
+    "titleLine2": "無限の可能性",
+    "pricingInfo": "1シートあたり月額わずか39ドルから",
+    "pricingCalculatorInfo": "料金計算ツールでどれだけ節約できるかを確認してください",
+    "viewPricingButton": "料金を見る",
+    "startFreeButton": "今すぐ無料で始める"
   }
 }

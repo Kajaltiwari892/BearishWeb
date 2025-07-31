@@ -180,5 +180,14 @@
     "navigationHint": "Usa las flechas para ver más soluciones →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "Posibilidades Ilimitadas",
+    "titleLine1": "Un solo sistema operativo.",
+    "titleLine2": "Posibilidades Ilimitadas",
+    "pricingInfo": "Desde solo $39 por asiento al mes",
+    "pricingCalculatorInfo": "Consulta nuestra calculadora de precios y descubre cuánto puedes ahorrar",
+    "viewPricingButton": "Ver precios",
+    "startFreeButton": "Empieza gratis ahora"
   }
 }

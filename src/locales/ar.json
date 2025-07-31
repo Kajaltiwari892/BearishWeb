@@ -161,12 +161,11 @@
       {
         "title": "تطوير المنتج",
         "description": "للشركات التقنية والشركات الناشئة المبتكرة. تنسيق فريقك بالكامل من التخطيط إلى إطلاق المنتج بنجاح ودعم العملاء وما بعده.",
-         "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
+        "imageSrc": "/images/CompleteWorkflow/ProductDevelopement.png"
       },
       {
         "title": "المبيعات ونجاح العملاء",
         "description": "للشركات التي ترغب في زيادة الإيرادات. تحويل العملاء المتوقعين إلى عملاء مخلصين مع إدارة سلسة للمبيعات والعلاقات."
-       
       },
       {
         "title": "عمليات الفريق البعيد",
@@ -183,6 +182,15 @@
     ],
     "navigationHint": "استخدم الأسهم لعرض المزيد من الحلول →",
     "prevButton": "‹",
-    "nextButton": "›"
+    "nextButton": "›",
+    "unlimitedPoss": {
+      "title": "إمكانات غير محدودة",
+      "titleLine1": "نظام تشغيل واحد.",
+      "titleLine2": "إمكانات غير محدودة",
+      "pricingInfo": "ابتداءً من 39 دولارًا لكل مقعد شهريًا",
+      "pricingCalculatorInfo": "اطلع على حاسبة الأسعار لدينا وشاهد مقدار ما يمكنك توفيره",
+      "viewPricingButton": "عرض الأسعار",
+      "startFreeButton": "ابدأ مجانًا الآن"
+    }
   }
 }

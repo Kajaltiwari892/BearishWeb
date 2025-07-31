@@ -1,14 +1,21 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "@/lib/i18n";
 
 const UnlimitedPoss: React.FC = () => {
+  const t = useTranslations();
+
+  if (!t) {
+    return null; // or a loading state
+  }
+
   return (
     <section className="relative w-full h-auto md:h-screen overflow-hidden">
       {/* Background */}
       <Image
         src="/images/others/BearishUnliPoss.png"
-        alt="Unlimited Possibilities Background"
+        alt={t.unlimitedPoss?.title || ""}
         fill
         className="object-cover"
         priority
@@ -28,36 +35,36 @@ const UnlimitedPoss: React.FC = () => {
           "
           style={{ fontFamily: "Suez One" }}
         >
-          One OS.
+          {t.unlimitedPoss?.titleLine1 || ""}
           <br />
-          Unlimited Possibilities
+          {t.unlimitedPoss?.titleLine2 || ""}
         </h1>
 
-        <p
-          className="
-            mt-4
-            text-lg        /* mobile */
-            sm:text-xl     /* tablet */
-            md:text-[2rem] /* desktop unchanged */
-            font-bold
-          "
-          style={{ fontFamily: "var(--font-source)" }}
-        >
-          As low as $39/seat per month
-        </p>
+          <p
+            className="
+              mt-4
+              text-lg        /* mobile */
+              sm:text-xl     /* tablet */
+              md:text-[2rem] /* desktop unchanged */
+              font-bold
+            "
+            style={{ fontFamily: "var(--font-source)" }}
+          >
+            {t.unlimitedPoss?.pricingInfo || ""}
+          </p>
 
-        <p
-          className="
-            mt-2 italic
-            text-base      /* mobile */
-            sm:text-lg     /* tablet */
-            md:text-[1.25rem] /* desktop unchanged */
-            max-w-xl
-          "
-          style={{ fontFamily: "var(--font-source)" }}
-        >
-          View our pricing calculator and see how much you can save
-        </p>
+          <p
+            className="
+              mt-2 italic
+              text-base      /* mobile */
+              sm:text-lg     /* tablet */
+              md:text-[1.25rem] /* desktop unchanged */
+              max-w-xl
+            "
+            style={{ fontFamily: "var(--font-source)" }}
+          >
+            {t.unlimitedPoss?.pricingCalculatorInfo || ""}
+          </p>
 
         {/* Buttons */}
         <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
@@ -74,7 +81,7 @@ const UnlimitedPoss: React.FC = () => {
             "
             style={{ fontFamily: "Averia Serif Libre" }}
           >
-            View Pricing
+            {t.unlimitedPoss?.viewPricingButton || ""}
           </button>
           <button
             className="
@@ -88,7 +95,7 @@ const UnlimitedPoss: React.FC = () => {
             "
             style={{ fontFamily: "Averia Serif Libre" }}
           >
-            Start free now
+            {t.unlimitedPoss?.startFreeButton || ""}
           </button>
         </div>
       </div>

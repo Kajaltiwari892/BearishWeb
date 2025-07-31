@@ -45,6 +45,16 @@ interface CompleteWorkflowSection {
   nextButton: string;
 }
 
+interface UnlimitedPossSection {
+  title: string;
+  titleLine1: string;
+  titleLine2: string;
+  pricingInfo: string;
+  pricingCalculatorInfo: string;
+  viewPricingButton: string;
+  startFreeButton: string;
+}
+
 interface Translation {
   hero: {
     title: string;
@@ -72,6 +82,7 @@ interface Translation {
   universalSearch: SectionText;
   privateFoundation: PrivateFoundation;
   completeWorkflow: CompleteWorkflowSection;
+  unlimitedPoss: UnlimitedPossSection;
 }
 
 export function useTranslations() {

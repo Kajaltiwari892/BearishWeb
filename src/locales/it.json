@@ -179,5 +179,14 @@
     "navigationHint": "Usa le frecce per vedere più soluzioni →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "Possibilità Illimitate",
+    "titleLine1": "Un solo sistema operativo.",
+    "titleLine2": "Possibilità Illimitate",
+    "pricingInfo": "A partire da soli $39 per posto al mese",
+    "pricingCalculatorInfo": "Guarda il nostro calcolatore dei prezzi e scopri quanto puoi risparmiare",
+    "viewPricingButton": "Vedi i prezzi",
+    "startFreeButton": "Inizia gratis ora"
   }
 }

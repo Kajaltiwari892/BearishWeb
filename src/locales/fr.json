@@ -36,7 +36,7 @@
       }
     ]
   },
-  
+
   "bebaSection": {
     "sectionTitle": "BEBA. L’agent de productivité n° 1",
     "SecSectionTitle": "pour les travailleurs du savoir occupés.",
@@ -181,5 +181,14 @@
     "navigationHint": "Utilisez les flèches pour voir plus de solutions →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "Possibilités Illimitées",
+    "titleLine1": "Un seul OS.",
+    "titleLine2": "Possibilités Illimitées",
+    "pricingInfo": "À partir de seulement 39 $/siège par mois",
+    "pricingCalculatorInfo": "Consultez notre calculateur de prix et voyez combien vous pouvez économiser",
+    "viewPricingButton": "Voir les prix",
+    "startFreeButton": "Commencez gratuitement maintenant"
   }
 }

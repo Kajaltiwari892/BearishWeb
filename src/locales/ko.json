@@ -163,7 +163,6 @@
       {
         "title": "영업 및 고객 성공",
         "description": "수익을 확대하려는 기업용. 잠재 고객을 충성 고객으로 전환하는 원활한 영업 및 관계 관리를 제공합니다."
-        
       },
       {
         "title": "원격 팀 운영",
@@ -181,5 +180,14 @@
     "navigationHint": "화살표를 사용하여 더 많은 솔루션 보기 →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "무한한 가능성",
+    "titleLine1": "하나의 운영체제.",
+    "titleLine2": "무한한 가능성",
+    "pricingInfo": "좌석당 월 $39부터",
+    "pricingCalculatorInfo": "가격 계산기를 확인하고 얼마나 절약할 수 있는지 알아보세요",
+    "viewPricingButton": "가격 보기",
+    "startFreeButton": "지금 무료로 시작하기"
   }
 }

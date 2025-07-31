@@ -178,5 +178,14 @@
     "navigationHint": "Use the arrows to see more solutions →",
     "prevButton": "‹",
     "nextButton": "›"
+  },
+  "unlimitedPoss": {
+    "title": "Unlimited Possibilities",
+    "titleLine1": "One OS.",
+    "titleLine2": "Unlimited Possibilities",
+    "pricingInfo": "As low as $39/seat per month",
+    "pricingCalculatorInfo": "View our pricing calculator and see how much you can save",
+    "viewPricingButton": "View Pricing",
+    "startFreeButton": "Start free now"
   }
 }
