@@ -111,11 +111,11 @@ const FooterMenu: React.FC = () => {
             ))}
           </div>
 
-          {/* Tablet: 2 columns */}
+          {/* Tablet: 2 columns with extra space between them */}
           <div className="hidden sm:block md:hidden">
-            <div className="grid grid-cols-2 gap-8">
+            <div className="flex gap-16">
               {menuSections.map((section: MenuSection) => (
-                <div key={section.title} className="min-w-max">
+                <div key={section.title} className="min-w-max flex-1">
                   {/* Column Title */}
                   <h3
                     className="text-xl font-bold text-[#3C3C3C] whitespace-nowrap mb-6"
@@ -143,99 +143,120 @@ const FooterMenu: React.FC = () => {
             </div>
           </div>
 
-          {/* Medium screens: 4 columns with adjusted spacing */}
+          {/* Medium screens: 4 columns with extra space between Products and Solutions */}
           <div className="hidden md:block lg:hidden">
-            <div className="grid grid-cols-4 gap-6">
-              {menuSections.map((section: MenuSection) => (
-                <div key={section.title} className="min-w-max">
-                  {/* Column Title */}
-                  <h3
-                    className="text-xl font-bold text-[#3C3C3C] whitespace-nowrap mb-6"
-                    style={{ fontFamily: "Suez One" }}
+            <div className="flex gap-6">
+              {menuSections.map(
+                (section: MenuSection, sectionIndex: number) => (
+                  <div
+                    key={section.title}
+                    className={`min-w-max flex-1 ${
+                      sectionIndex === 1 ? "ml-8" : ""
+                    }`}
                   >
-                    {section.title}
-                  </h3>
+                    {/* Column Title */}
+                    <h3
+                      className="text-xl font-bold text-[#3C3C3C] whitespace-nowrap mb-6"
+                      style={{ fontFamily: "Suez One" }}
+                    >
+                      {section.title}
+                    </h3>
 
-                  {/* Column Items */}
-                  <ul
-                    className="space-y-4 text-[#3C3C3C] text-lg font-semibold"
-                    style={{ fontFamily: "var(--font-source)" }}
-                  >
-                    {section.items.map((item: string, index: number) => (
-                      <li
-                        key={index}
-                        className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                    {/* Column Items */}
+                    <ul
+                      className="space-y-4 text-[#3C3C3C] text-lg font-semibold"
+                      style={{ fontFamily: "var(--font-source)" }}
+                    >
+                      {section.items.map((item: string, index: number) => (
+                        <li
+                          key={index}
+                          className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              )}
             </div>
           </div>
 
-          {/* Large screens: 4 columns with more spacing */}
+          {/* Large screens: 4 columns with extra space between Products and Solutions */}
           <div className="hidden lg:block xl:hidden">
-            <div className="grid grid-cols-4 gap-8">
-              {menuSections.map((section: MenuSection) => (
-                <div key={section.title} className="min-w-max">
-                  {/* Column Title */}
-                  <h3
-                    className="text-2xl font-bold text-[#3C3C3C] whitespace-nowrap mb-7"
-                    style={{ fontFamily: "Suez One" }}
+            <div className="flex gap-8">
+              {menuSections.map(
+                (section: MenuSection, sectionIndex: number) => (
+                  <div
+                    key={section.title}
+                    className={`min-w-max flex-1 ${
+                      sectionIndex === 1 ? "ml-12" : ""
+                    }`}
                   >
-                    {section.title}
-                  </h3>
+                    {/* Column Title */}
+                    <h3
+                      className="text-2xl font-bold text-[#3C3C3C] whitespace-nowrap mb-7"
+                      style={{ fontFamily: "Suez One" }}
+                    >
+                      {section.title}
+                    </h3>
 
-                  {/* Column Items */}
-                  <ul
-                    className="space-y-4 text-[#3C3C3C] text-xl font-semibold"
-                    style={{ fontFamily: "var(--font-source)" }}
-                  >
-                    {section.items.map((item: string, index: number) => (
-                      <li
-                        key={index}
-                        className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                    {/* Column Items */}
+                    <ul
+                      className="space-y-4 text-[#3C3C3C] text-xl font-semibold"
+                      style={{ fontFamily: "var(--font-source)" }}
+                    >
+                      {section.items.map((item: string, index: number) => (
+                        <li
+                          key={index}
+                          className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              )}
             </div>
           </div>
 
-          {/* Extra Large screens and above: Original layout */}
+          {/* Extra Large screens and above: Original layout with extra space between Products and Solutions */}
           <div className="hidden xl:block">
-            <div className="grid grid-cols-4 gap-12">
-              {menuSections.map((section: MenuSection) => (
-                <div key={section.title} className="min-w-max mt-4 ml-10">
-                  {/* Column Title */}
-                  <h3
-                    className="text-2xl font-bold text-[#3C3C3C] whitespace-nowrap mb-8"
-                    style={{ fontFamily: "Suez One" }}
+            <div className="flex gap-12">
+              {menuSections.map(
+                (section: MenuSection, sectionIndex: number) => (
+                  <div
+                    key={section.title}
+                    className={`min-w-max mt-4 ml-10 flex-1 ${
+                      sectionIndex === 1 ? "ml-20" : ""
+                    }`}
                   >
-                    {section.title}
-                  </h3>
+                    {/* Column Title */}
+                    <h3
+                      className="text-2xl font-bold text-[#3C3C3C] whitespace-nowrap mb-8"
+                      style={{ fontFamily: "Suez One" }}
+                    >
+                      {section.title}
+                    </h3>
 
-                  {/* Column Items */}
-                  <ul
-                    className="space-y-5 mt-13 text-[#3C3C3C] text-xl font-semibold"
-                    style={{ fontFamily: "var(--font-source)" }}
-                  >
-                    {section.items.map((item: string, index: number) => (
-                      <li
-                        key={index}
-                        className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                    {/* Column Items */}
+                    <ul
+                      className="space-y-5 mt-13 text-[#3C3C3C] text-xl font-semibold"
+                      style={{ fontFamily: "var(--font-source)" }}
+                    >
+                      {section.items.map((item: string, index: number) => (
+                        <li
+                          key={index}
+                          className="cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
