@@ -19,12 +19,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const productRef = useRef<HTMLDivElement>(null);
 
   const companyLogos = [
-    { name: "New York Life", fontFamily: "Suez One" },
-    { name: "Securitz AI", fontFamily: "Syne Mono" },
+    { name: "New York Life", fontFamily: "Suez One", },
+    { name: "Securitz AI", fontFamily: "Syne Mono",},
     {
       name: "COINS",
       fontFamily: "Superclarendon",
-      className: "italic font-light",
+      className: "italic font-light ",
     },
     { name: "Hilton", fontFamily: "Tilt Warp" },
     { name: "Phantom Io", fontFamily: "Titan one" },
